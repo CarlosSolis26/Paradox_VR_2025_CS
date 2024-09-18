@@ -27,19 +27,19 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
     private void Start()
     {
         Init();
     }
-    
+
     private void Init()
     {
         playerScore = 0;
         wonUI.SetActive(false);
         startUI.SetActive(true);
     }
-    
+
     public void GamePaused()
     {
         Time.timeScale = 0;
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     public void GameWon()
     {
         GamePaused();
-        
+
     }
 
     public void LoadNewScene(int sceneIndex)
@@ -65,4 +65,5 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(sceneIndex);
     }
+
 }
