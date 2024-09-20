@@ -15,16 +15,16 @@ public class PlayerInputsController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerInput.actions["Look"].performed += OnLook;
         playerInput.actions["Look"].canceled += OnLook;
-        //playerInput.actions["Fire"].performed += OnFire;
-        //playerInput.actions["Fire"].canceled += OnFire;
+        playerInput.actions["Fire"].performed += OnFire;
+        playerInput.actions["Fire"].canceled += OnFire;
     }
 
     private void OnDisable()
     {
         playerInput.actions["Look"].performed -= OnLook;
         playerInput.actions["Look"].canceled -= OnLook;
-        //playerInput.actions["Fire"].performed -= OnFire;
-        //playerInput.actions["Fire"].canceled -= OnFire;
+        playerInput.actions["Fire"].performed -= OnFire;
+        playerInput.actions["Fire"].canceled -= OnFire;
     }
 
     private void Update()
@@ -54,8 +54,8 @@ public class PlayerInputsController : MonoBehaviour
         // Read the mouse delta
         lookInput = context.ReadValue<Vector2>();
     }
-    //public void OnFire(InputAction.CallbackContext context)
-    //{
-    //    Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-    //}
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+    }
 }
