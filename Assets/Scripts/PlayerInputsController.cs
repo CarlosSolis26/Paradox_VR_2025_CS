@@ -29,13 +29,15 @@ public class PlayerInputsController : MonoBehaviour
 
     private void Update()
     {
-        Move(movementInput);
+        MovePlayer(movementInput);
         Rotate();
     }
-    private void Move(Vector2 moveVector)
+
+    private void MovePlayer(Vector2 moveVector)
     {
-        moveVector.Normalize();
-        transform.Translate(moveVector * moveSpeed * Time.deltaTime, Space.World);
+        Vector3 movementPlayer = new Vector3(moveVector.x,0,moveVector.y);
+        movementPlayer.Normalize();
+        transform.Translate(movementPlayer * moveSpeed * Time.deltaTime, Space.World);
     }
 
     private void Rotate()
