@@ -30,32 +30,35 @@ public class RelayManager : MonoBehaviour
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
     }
 
-    public async void StartRelay()
+    public async void StartRelayHost()
     {
-        
+        string joinCode = await StartRelayHostAsync();
+        joinCodeText.text = joinCode;
     }
 
     // Async functions because it takes some time for them to be executed
     // Make the async function return a string with Task<string>
-    public async Task<string> StartHostWithRelay(int maxConnections = 3)
+    public async Task<string> StartRelayHostAsync(int maxConnections = 3)
     {
         // Create allocation in Relay setting the max number of players
         var allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
-        
+
         // Set Relay Server data
         // Create new allocation and set the data transport protocol to dtls
-        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(allocation, "dtls"));
+        NetworkManager.Singleton.GetComponent<UnityTransport>()
+            .SetRelayServerData(new RelayServerData(allocation, "dtls"));
 
         // Get join code if Host started successfully or null if not.
         var joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-        return NetworkManager.Singleton.StartHost() 
-            ? joinCode 
-            : null;
+
+        var relayHostStarted = NetworkManager.Singleton.StartHost();
+
+        return relayHostStarted ? joinCode : null;
     }
 
     // Check if the client connection is successful
-    public async Task<bool> void StartClientWithRelay(string joinCode)
-    {
-        
-    }
+    // public async Task<bool> StartRelayClientAsync(string joinCode)
+    // {
+    //     
+    // }
 }
