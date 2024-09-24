@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Paradox
-  productName: VR_MP_2024
+  productName: VR_MP_2024_CS
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -139,9 +139,10 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.1.0
+  bundleVersion: 1.0.0
   preloadedAssets:
   - {fileID: -84979364260508081, guid: ad6e5d934fdd23148a513098effccfce, type: 2}
+  - {fileID: 11400000, guid: 5ce83d039db4bda499ddd377251cd3da, type: 2}
   - {fileID: -913869519335489504, guid: dc59d8fd1843c244280749e0a9dd1227, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -163,7 +164,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.Paradox.VR_MP_2024
+    Android: com.Paradox.VR_MP_2024_CS
     Standalone: com.Paradox.MP.2024.1
     iPhone: com.Unity-Technologies.com.unity.template.urp-blank
   buildNumber:
@@ -171,9 +172,9 @@ PlayerSettings:
     VisionOS: 0
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 1
+  overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 30
+  AndroidMinSdkVersion: 24
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -920,7 +921,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 2
+  activeInputHandler: 1
   windowsGamepadBackendHint: 0
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
