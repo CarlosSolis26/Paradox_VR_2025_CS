@@ -30,17 +30,24 @@ public class RelayManager : MonoBehaviour
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
     }
 
-    public async void StartRelayHost()
+    public async void RelayHost()
     {
-        string joinCode = await StartRelayHostAsync();
+        var joinCode = await StartRelayHostAsync();
         joinCodeText.text = joinCode;
+    }
+
+    public async void RelayJoin()
+    {
+        await StartRelayClientAsync(joinCodeInputField.text);
     }
 
     // Async functions because it takes some time for them to be executed
     // Make the async function return a string with Task<string>
-    public async Task<string> StartRelayHostAsync(int maxConnections = 3)
+    private async Task<string> StartRelayHostAsync(int maxConnections = 3)
     {
-        // Create allocation in Relay setting the max number of players
+        // Creates an Allocation object in Relay with a new game session with settings such as 
+        // max connections - max numbre of players
+        // And joins automatically to the game session
         var allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
 
         // Set Relay Server data
@@ -56,9 +63,18 @@ public class RelayManager : MonoBehaviour
         return relayHostStarted ? joinCode : null;
     }
 
-    // Check if the client connection is successful
-    // public async Task<bool> StartRelayClientAsync(string joinCode)
-    // {
-    //     
-    // }
+    private async Task<bool> StartRelayClientAsync(string codeToJoin)
+    {
+        // Joins to a game session with the provided join code
+        JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(codeToJoin);
+
+        // Set Relay Server with new data from joinAllocation
+        NetworkManager.Singleton.GetComponent<UnityTransport>()
+            .SetRelayServerData(new RelayServerData(joinAllocation, "dtls"));
+
+        // True if the join code is not empty or null and if StartHost is successful (true)
+        var clientJoined = !string.IsNullOrEmpty(codeToJoin) && NetworkManager.Singleton.StartHost();
+
+        return clientJoined;
+    }
 }
