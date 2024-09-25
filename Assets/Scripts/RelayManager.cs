@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using TMPro;
 using Unity.Netcode;
@@ -45,11 +46,21 @@ public class RelayManager : MonoBehaviour
     // Make the async function return a string with Task<string>
     private async Task<string> StartRelayHostAsync(int maxConnections = 3)
     {
-        // Creates an Allocation object in Relay with a new game session with settings such as 
-        // max connections - max numbre of players
-        // And joins automatically to the game session
-        var allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
-
+        Allocation allocation;
+        
+        try
+        {
+            // Creates an Allocation object in Relay with a new game session with settings such as 
+            // max connections - max numbre of players
+            // And joins automatically to the game session
+            allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Relay Host allocation failed. Exception: " + e);
+            throw;
+        }
+        
         // Set Relay Server data
         // Create new allocation and set the data transport protocol to dtls
         NetworkManager.Singleton.GetComponent<UnityTransport>()
