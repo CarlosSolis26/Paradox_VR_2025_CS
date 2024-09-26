@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro/Documentation.meta
 guid: 8e7e8f5a82a3a134e91c54efd2274ea9
+========
+guid: 3b7993497a24f794cb4df92ec5185346
+>>>>>>>> mp-14-sep-cs:Assets/Polybrush Data/Prefab Palette.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

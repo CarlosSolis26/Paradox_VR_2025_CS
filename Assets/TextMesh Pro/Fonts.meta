@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro/Fonts.meta
 guid: 6ab70aee4d56447429c680537fbf93ed
+========
+guid: 98808dff95764db4da1aa457d0ef65c7
+>>>>>>>> mp-14-sep-cs:Assets/Polybrush Data/Color Palette.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

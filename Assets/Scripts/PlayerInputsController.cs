@@ -9,33 +9,36 @@ public class PlayerInputsController : MonoBehaviour
     [SerializeField] private Vector2 movementInput;
     [SerializeField] private Vector2 lookInput;
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] public Transform spawnPoint;
 
     private void OnEnable()
     {
         playerInput = GetComponent<PlayerInput>();
         playerInput.actions["Look"].performed += OnLook;
         playerInput.actions["Look"].canceled += OnLook;
-        //playerInput.actions["Fire"].performed += OnFire;
-        //playerInput.actions["Fire"].canceled += OnFire;
+        playerInput.actions["Fire"].performed += OnFire;
+        playerInput.actions["Fire"].canceled += OnFire;
     }
 
     private void OnDisable()
     {
         playerInput.actions["Look"].performed -= OnLook;
         playerInput.actions["Look"].canceled -= OnLook;
-        //playerInput.actions["Fire"].performed -= OnFire;
-        //playerInput.actions["Fire"].canceled -= OnFire;
+        playerInput.actions["Fire"].performed -= OnFire;
+        playerInput.actions["Fire"].canceled -= OnFire;
     }
 
     private void Update()
     {
-        Move(movementInput);
+        MovePlayer(movementInput);
         Rotate();
     }
-    private void Move(Vector2 moveVector)
+
+    private void MovePlayer(Vector2 moveVector)
     {
-        moveVector.Normalize();
-        transform.Translate(moveVector * moveSpeed * Time.deltaTime, Space.World);
+        Vector3 movementPlayer = new Vector3(moveVector.x,0,moveVector.y);
+        movementPlayer.Normalize();
+        transform.Translate(movementPlayer * moveSpeed * Time.deltaTime, Space.World);
     }
 
     private void Rotate()
@@ -54,8 +57,8 @@ public class PlayerInputsController : MonoBehaviour
         // Read the mouse delta
         lookInput = context.ReadValue<Vector2>();
     }
-    //public void OnFire(InputAction.CallbackContext context)
-    //{
-    //    Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-    //}
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
+    }
 }

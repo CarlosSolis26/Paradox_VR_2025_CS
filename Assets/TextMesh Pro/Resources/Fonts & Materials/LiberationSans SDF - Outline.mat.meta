@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat.meta
 guid: 79459efec17a4d00a321bdcc27bbc385
 timeCreated: 1484172856
 licenseType: Pro
+========
+guid: 0b1a9a60741fb7045967dfc4f60bdae6
+>>>>>>>> mp-14-sep-cs:Assets/Polybrush Data/Brush Settings/BrushSettings-Default.asset.meta
 NativeFormatImporter:
   userData: 
   assetBundleName: 

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Packs.meta
 guid: 3b6261b6c2d08ad4dade92e798f1b557
+========
+guid: 24402fd1f4bbb744e84e2409754f8c9c
+>>>>>>>> mp-14-sep-cs:Assets/Polybrush Data.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
