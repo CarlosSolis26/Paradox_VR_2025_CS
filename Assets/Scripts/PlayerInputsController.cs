@@ -9,6 +9,7 @@ public class PlayerInputsController : MonoBehaviour
     [SerializeField] private Vector2 movementInput;
     [SerializeField] private Vector2 lookInput;
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] public Transform spawnPoint;
 
     private void OnEnable()
     {
@@ -58,6 +59,6 @@ public class PlayerInputsController : MonoBehaviour
     }
     public void OnFire(InputAction.CallbackContext context)
     {
-        Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
     }
 }
