@@ -84,7 +84,7 @@ public class RelayManager : MonoBehaviour
             .SetRelayServerData(new RelayServerData(joinAllocation, "dtls"));
 
         // True if the join code is not empty or null and if StartHost is successful (true)
-        var clientJoined = !string.IsNullOrEmpty(codeToJoin) && NetworkManager.Singleton.StartHost();
+        var clientJoined = !string.IsNullOrEmpty(codeToJoin) && NetworkManager.Singleton.StartClient();
 
         return clientJoined;
     }

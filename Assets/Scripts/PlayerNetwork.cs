@@ -1,5 +1,5 @@
-    using Unity.Netcode;
-    using UnityEngine;
+using Unity.Netcode;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerNetwork : NetworkBehaviour
