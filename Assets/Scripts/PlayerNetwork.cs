@@ -10,6 +10,9 @@ public class PlayerNetwork : NetworkBehaviour
     public float moveSpeed = 5f;
     public float lookSpeed = 0.2f;
 
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] public Transform spawnPoint;
+
     private void OnEnable()
     {
         var inputActions = new PlayerInputActions();
@@ -19,6 +22,8 @@ public class PlayerNetwork : NetworkBehaviour
         inputActions.Player.Move.canceled += MovePlayer;
         inputActions.Player.Look.performed += RotatePlayer;
         inputActions.Player.Look.canceled += RotatePlayer;
+        inputActions.Player.Fire.performed += FirePlayer;
+        inputActions.Player.Fire.canceled += FirePlayer;
     }
 
     private void OnDisable()
@@ -46,6 +51,30 @@ public class PlayerNetwork : NetworkBehaviour
     private void RotatePlayer(InputAction.CallbackContext context)
     {
         lookInput = context.ReadValue<Vector2>();
+    }
+
+    private void FirePlayer(InputAction.CallbackContext context)
+    {
+        if (IsServer && IsOwner)
+        {
+            //GameObject bulletInstance = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
+            GameObject bulletInstance = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+            bulletInstance.GetComponent<NetworkObject>().Spawn();
+            Rigidbody rb = bulletInstance.GetComponent<Rigidbody>();
+            rb.velocity = spawnPoint.forward * 10f;
+        }
+        else {
+            ShootServerRpc(spawnPoint.position, spawnPoint.rotation);
+        }
+    }
+
+    [ServerRpc]
+    void ShootServerRpc(Vector3 position, Quaternion rotation)
+    {
+            GameObject bulletInstance = Instantiate(bulletPrefab, position, rotation);
+            bulletInstance.GetComponent<NetworkObject>().Spawn();
+            Rigidbody rb = bulletInstance.GetComponent<Rigidbody>();
+            rb.velocity = spawnPoint.forward * 10f;
     }
 
     private void Update()
