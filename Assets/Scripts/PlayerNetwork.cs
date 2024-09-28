@@ -13,6 +13,8 @@ public class PlayerNetwork : NetworkBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] public Transform spawnPoint;
 
+    public float bulletVelocity = 1f; 
+
     private void OnEnable()
     {
         var inputActions = new PlayerInputActions();
@@ -23,13 +25,18 @@ public class PlayerNetwork : NetworkBehaviour
         inputActions.Player.Look.performed += RotatePlayer;
         inputActions.Player.Look.canceled += RotatePlayer;
         inputActions.Player.Fire.performed += FirePlayer;
-        inputActions.Player.Fire.canceled += FirePlayer;
     }
 
     private void OnDisable()
     {
         var inputActions = new PlayerInputActions();
         inputActions.Disable();
+
+        inputActions.Player.Move.performed -= MovePlayer;
+        inputActions.Player.Move.canceled -= MovePlayer;
+        inputActions.Player.Look.performed -= RotatePlayer;
+        inputActions.Player.Look.canceled -= RotatePlayer;
+        inputActions.Player.Fire.performed -= FirePlayer;
     }
 
     public override void OnNetworkSpawn()
@@ -58,14 +65,19 @@ public class PlayerNetwork : NetworkBehaviour
         if (IsServer && IsOwner)
         {
             //GameObject bulletInstance = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-            GameObject bulletInstance = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
-            bulletInstance.GetComponent<NetworkObject>().Spawn();
-            Rigidbody rb = bulletInstance.GetComponent<Rigidbody>();
-            rb.velocity = spawnPoint.forward * 10f;
+            BulletSpawnMovement();
         }
         else {
             ShootServerRpc(spawnPoint.position, spawnPoint.rotation);
         }
+    }
+
+    private void BulletSpawnMovement()
+    {
+        GameObject bulletInstance = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+        bulletInstance.GetComponent<NetworkObject>().Spawn();
+        Rigidbody rb = bulletInstance.GetComponent<Rigidbody>();
+        rb.velocity = spawnPoint.forward * bulletVelocity;
     }
 
     [ServerRpc]
@@ -74,7 +86,7 @@ public class PlayerNetwork : NetworkBehaviour
             GameObject bulletInstance = Instantiate(bulletPrefab, position, rotation);
             bulletInstance.GetComponent<NetworkObject>().Spawn();
             Rigidbody rb = bulletInstance.GetComponent<Rigidbody>();
-            rb.velocity = spawnPoint.forward * 10f;
+            rb.velocity = spawnPoint.forward * bulletVelocity;
     }
 
     private void Update()

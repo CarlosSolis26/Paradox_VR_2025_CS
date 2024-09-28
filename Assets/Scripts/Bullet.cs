@@ -16,14 +16,14 @@ public class Bullet : NetworkBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (IsServer || IsClient)
-        {
-            // Move the bullet forward
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        }
-    }
+    //private void Update()
+    //{
+    //    if (IsServer || IsClient)
+    //    {
+    //        // Move the bullet forward
+    //        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    //    }
+    //}
 
     //private void OnCollisionEnter(Collision collision)
     //{
