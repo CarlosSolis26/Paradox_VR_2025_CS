@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/DAVID ROMERO/Menu.unity
+    path: Assets/Projects/David Romero/Menu.unity
     guid: 4f16988f42b98eb48bd71d404ef93075
   - enabled: 1
-    path: Assets/DAVID ROMERO/VR_Scene_JumpiPig.unity
+    path: Assets/Projects/David Romero/VR_Scene_JumpiPig.unity
     guid: 63610472dad89994cb5267d7d8e3312f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c2341b1bae2c3494cbba2252ab5672bf,

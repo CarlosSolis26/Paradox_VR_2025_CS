@@ -30,6 +30,7 @@ public class PlayerJump : MonoBehaviour
     public Transform shootPoint; // Punto de disparo del proyectil
     public GameObject projectilePrefab; // Prefab del proyectil
     public float shootForce = 10f; // Fuerza con la que se dispara el proyectil
+    public InputActionReference shootAction;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -37,6 +38,12 @@ public class PlayerJump : MonoBehaviour
 
         // Vincular la acción de salto
         jumpAction.action.performed += ctx => Jump();
+
+        // Vincular la acción de disparo
+        if (shootAction != null)
+        {
+            shootAction.action.performed += ctx => ShootProjectile();
+        }
 
         watchOutText.gameObject.SetActive(false);
         if (teleportationProvider != null)
@@ -78,7 +85,7 @@ public class PlayerJump : MonoBehaviour
             AudioManager.Instance.PlayFallSound();
             Respawn();
         }
-        if (Input.GetMouseButtonDown(0)) // Por ejemplo, clic izquierdo para atacar
+        if (shootAction != null) // Por ejemplo, clic izquierdo para atacar
         {
             RaycastHit hit;
 
@@ -95,7 +102,18 @@ public class PlayerJump : MonoBehaviour
             }
         }
     }
-
+    private void ShootProjectile()
+    {
+        if (projectilePrefab != null && shootPoint != null)
+        {
+            GameObject projectileInstance = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+            Rigidbody rb = projectileInstance.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.AddForce(shootPoint.forward * shootForce, ForceMode.Impulse);
+            }
+        }
+    }
     private void Jump()
     {
         if (isGrounded)
@@ -131,7 +149,12 @@ public class PlayerJump : MonoBehaviour
         // Desenlazar las acciones
         jumpAction.action.performed -= ctx => Jump();
 
-        if (teleportationProvider != null)
+            if (shootAction != null)
+            {
+                shootAction.action.performed -= ctx => ShootProjectile();
+            }
+
+            if (teleportationProvider != null)
         {
             teleportationProvider.beginLocomotion -= OnBeginTeleportation;
             teleportationProvider.endLocomotion -= OnEndTeleportation;

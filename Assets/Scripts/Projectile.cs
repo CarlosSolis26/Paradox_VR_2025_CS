@@ -8,14 +8,18 @@ public class Projectile : MonoBehaviour
     public float lifetime = 2f;
     public int damage = 25;
 
+    private Rigidbody rb;
     private void Start()
     {
-        Destroy(gameObject, lifetime);
-    }
+        rb = GetComponent<Rigidbody>();
 
-    private void Update()
-    {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        // Asegúrate de que el proyectil se mueve hacia adelante al ser instanciado
+        if (rb != null)
+        {
+            rb.velocity = transform.forward * speed;
+        }
+
+        Destroy(gameObject, lifetime);
     }
 
     private void OnTriggerEnter(Collider other)

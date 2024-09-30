@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public int damage = 10; // Cantidad de daño que causa el enemigo
     public float chaseSpeed = 3.5f; // Velocidad de persecución
     public int maxHealth = 50; // Salud máxima del enemigo
-    public Transform target;
+    private Transform target;
 
     private int currentHealth;
     private float nextAttackTime = 0f;
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         if (player != null)
         {
             // Seguir al jugador
-            //agent.SetDestination(player.position);
+            agent.SetDestination(player.position);
 
             // Verificar si el jugador está dentro del rango de ataque
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
