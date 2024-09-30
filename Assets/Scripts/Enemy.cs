@@ -1,85 +1,85 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 3f;
-    public float attackRange = 1.5f;
-    public int damageToPlayer = 10;
-    public int maxHealth = 50;
-    public int currentHealth;
+    public Transform player; // Asigna el GameObject del jugador en el Inspector
+    public float attackRange = 2f; // Distancia de ataque del enemigo
+    public float attackRate = 1f; // Frecuencia de ataques (en segundos)
+    public int damage = 10; // Cantidad de daño que causa el enemigo
+    public float chaseSpeed = 3.5f; // Velocidad de persecución
+    public int maxHealth = 50; // Salud máxima del enemigo
+    public Transform target;
 
-    private Transform player;
-    private GameManager gameManager; // Referencia al GameManager
-    private float attackCooldown = 2f;
-    private float attackTimer = 0f;
+    private int currentHealth;
+    private float nextAttackTime = 0f;
+    private NavMeshAgent agent; // Agente de navegación para que el enemigo siga al jugador
+    private bool isPlayerInRange;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        gameManager = GameObject.FindObjectOfType<GameManager>(); // Encuentra el GameManager en la escena
+        // Obtener el componente NavMeshAgent del enemigo
+        agent = GetComponent<NavMeshAgent>();
         currentHealth = maxHealth;
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 
     void Update()
     {
+        if (agent != null && target != null)
+        {
+            agent.SetDestination(target.position);
+        }
+
         if (player != null)
         {
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            // Seguir al jugador
+            //agent.SetDestination(player.position);
 
-            if (distanceToPlayer <= attackRange)
+            // Verificar si el jugador está dentro del rango de ataque
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            isPlayerInRange = distanceToPlayer <= attackRange;
+
+            // Atacar al jugador si está en rango
+            if (isPlayerInRange && Time.time >= nextAttackTime)
             {
                 AttackPlayer();
+                nextAttackTime = Time.time + attackRate;
             }
-            else
-            {
-                ChasePlayer();
-            }
-
-            attackTimer += Time.deltaTime;
-        }
-    }
-
-    void ChasePlayer()
-    {
-        if (player != null)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
         }
     }
 
     void AttackPlayer()
     {
-        if (attackTimer >= attackCooldown && gameManager != null)
+        Debug.Log("Enemy attacks!");
+
+        // Obtener el script de salud del jugador y aplicarle daño
+        PlayerJump playerJump = player.GetComponent<PlayerJump>();
+        if (playerJump != null)
         {
-            gameManager.playerHealth -= damageToPlayer;
-            Debug.Log("Player Health: " + gameManager.playerHealth);
-            attackTimer = 0f;
+            playerJump.TakeDamage(damage);
         }
     }
 
-    public void TakeDamage(int damage)
+    // Método para que el enemigo reciba daño
+    public void TakeDamage(int amount)
     {
-        currentHealth -= damage;
-
+        currentHealth -= amount;
         if (currentHealth <= 0)
         {
             Die();
         }
     }
 
-    void Die()
+    private void Die()
     {
-        // Acciones al morir, por ejemplo, destruir el objeto o reproducir una animación
+        // Aquí puedes añadir la lógica para la muerte del enemigo (animación, desactivar objeto, etc.)
+        Debug.Log("Enemy has been defeated!");
         Destroy(gameObject);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        // Dibuja el rango de ataque del enemigo en la escena para facilitar el ajuste
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

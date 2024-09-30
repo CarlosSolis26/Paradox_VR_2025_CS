@@ -23,7 +23,13 @@ public class PlayerJump : MonoBehaviour
     public float textDisplayDuration = 2.0f;
     private TeleportationProvider teleportationProvider;
     private bool isTeleporting = false;
-
+    //Health
+    public int maxHealth = 100;
+    private int currentHealth;
+    //Violencia con disparos
+    public Transform shootPoint; // Punto de disparo del proyectil
+    public GameObject projectilePrefab; // Prefab del proyectil
+    public float shootForce = 10f; // Fuerza con la que se dispara el proyectil
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -143,5 +149,15 @@ public class PlayerJump : MonoBehaviour
     {
         isTeleporting = false;
         characterController.enabled = true;
+    }
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            // Puedes añadir aquí cualquier lógica que quieras cuando el jugador muera
+            Respawn(); 
+        }        
     }
 }
