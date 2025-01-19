@@ -54,6 +54,7 @@ MonoBehaviour:
       - rid: 9100469049234554898
       - rid: 9100469049234554899
       - rid: 9100469049234554900
+      - rid: 8567665506175942656
     m_RuntimeSettings:
       m_List: []
   m_AssetVersion: 8
@@ -86,6 +87,12 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 8567665506175942656
+      type: {class: UniversalRenderPipelineEditorAssets, ns: UnityEngine.Rendering.Universal,
+        asm: Unity.RenderPipelines.Universal.Runtime}
+      data:
+        m_DefaultSettingsVolumeProfile: {fileID: 11400000, guid: eda47df5b85f4f249abf7abd73db2cb2,
+          type: 2}
     - rid: 9100469049234554880
       type: {class: UniversalRenderPipelineEditorShaders, ns: UnityEngine.Rendering.Universal,
         asm: Unity.RenderPipelines.Universal.Runtime}

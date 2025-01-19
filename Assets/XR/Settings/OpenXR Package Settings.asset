@@ -187,6 +187,29 @@ MonoBehaviour:
   priority: 0
   required: 0
   ignoreValidationErrors: 0
+--- !u!114 &-4074716087104528815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
+  m_Name: WebGL
+  m_EditorClassIdentifier: 
+  features:
+  - {fileID: -3118997163471541753}
+  m_renderMode: 1
+  m_autoColorSubmissionMode: 1
+  m_colorSubmissionModes:
+    m_List: 00000000
+  m_depthSubmissionMode: 0
+  m_spacewarpMotionVectorTextureFormat: 0
+  m_optimizeBufferDiscards: 0
+  m_symmetricProjection: 0
+  m_foveatedRenderingApi: 0
 --- !u!114 &-3601158231630249920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +267,26 @@ MonoBehaviour:
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.metaquestpro
   openxrExtensionStrings: XR_FB_touch_controller_pro
+  company: Unity
+  priority: 0
+  required: 0
+--- !u!114 &-3118997163471541753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b213d3e3c7f3109449eb46a4c8ee42f0, type: 3}
+  m_Name: XrPerformanceSettingsFeature WebGL
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: XR Performance Settings
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.extension.performance_settings
+  openxrExtensionStrings: XR_EXT_performance_settings
   company: Unity
   priority: 0
   required: 0
@@ -435,16 +478,15 @@ MonoBehaviour:
   m_Name: Android
   m_EditorClassIdentifier: 
   features:
-  - {fileID: 6602289265092961653}
-  - {fileID: -1336902244119892467}
   - {fileID: -7799164933945860702}
   - {fileID: -2220748000655619681}
   - {fileID: 1541963809759933464}
+  - {fileID: -1336902244119892467}
   - {fileID: -2381188826312565046}
   - {fileID: 1181465361428875072}
   - {fileID: -1240773700858799325}
-  - {fileID: -3601158231630249920}
   - {fileID: 4972339119259056050}
+  - {fileID: 6602289265092961653}
   - {fileID: -3348903950890438064}
   - {fileID: 2533664360056348977}
   - {fileID: -5244121485407514799}
@@ -453,12 +495,12 @@ MonoBehaviour:
   - {fileID: -1648638257779540394}
   - {fileID: -8371598849869738177}
   - {fileID: -7412110941582341320}
-  - {fileID: 788246378563161082}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
     m_List: 00000000
   m_depthSubmissionMode: 0
+  m_spacewarpMotionVectorTextureFormat: 0
   m_optimizeBufferDiscards: 0
   m_symmetricProjection: 0
   m_foveatedRenderingApi: 0
@@ -516,10 +558,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0ebc320a151d3408ea1e9fce54d40e, type: 3}
   m_Name: OpenXR Package Settings
   m_EditorClassIdentifier: 
-  Keys: 0100000007000000
+  Keys: 01000000070000000d000000
   Values:
   - {fileID: 5821883165481566547}
   - {fileID: -913869519335489504}
+  - {fileID: -4074716087104528815}
 --- !u!114 &628341959630115505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +766,8 @@ MonoBehaviour:
   optimizeBufferDiscards: 1
   lateLatchingMode: 0
   lateLatchingDebug: 0
+  optimizeMultiviewRenderRegions: 0
+  spacewarpMotionVectorTextureFormat: 0
 --- !u!114 &5299578688731028880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,17 +801,16 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: 
   features:
-  - {fileID: 6886160704985913056}
-  - {fileID: -8294932880074991120}
   - {fileID: 4088371726900739115}
   - {fileID: 8263437908592671009}
   - {fileID: -2933078906761745223}
+  - {fileID: -8294932880074991120}
   - {fileID: 7714900093900418320}
   - {fileID: 3856896425915639330}
   - {fileID: -8769184206061975376}
   - {fileID: 7376234668707100040}
   - {fileID: 628341959630115505}
-  - {fileID: 1924198701837913571}
+  - {fileID: 6886160704985913056}
   - {fileID: -6494745112019347861}
   - {fileID: 8486424224211691833}
   - {fileID: 8445854048535662862}
@@ -776,12 +820,12 @@ MonoBehaviour:
   - {fileID: -148177949146107390}
   - {fileID: -720709511578098646}
   - {fileID: -6864297788960210915}
-  - {fileID: -2962684871139303916}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
     m_List: 00000000
   m_depthSubmissionMode: 0
+  m_spacewarpMotionVectorTextureFormat: 0
   m_optimizeBufferDiscards: 0
   m_symmetricProjection: 0
   m_foveatedRenderingApi: 0
