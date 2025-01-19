@@ -6,7 +6,7 @@ namespace Scripts_2
     {
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player")) Managers.GameManager.Instance.EndLevel(true); // Level completed
+            //if (other.CompareTag("Player")) Managers.GameManager.Instance.EndLevel(true); // Level completed
         }
     }
 }

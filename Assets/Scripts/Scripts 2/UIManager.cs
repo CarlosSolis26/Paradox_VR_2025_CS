@@ -24,7 +24,7 @@ namespace Scripts_2
 
         private void UpdateHealthUI()
         {
-            healthText.text = "Health: " + Managers.GameManager.Instance.playerHealth.health;
+            //healthText.text = "Health: " + Managers.GameManager.Instance.playerHealth.health;
         }
 
         private void ShowGameOverScreen()

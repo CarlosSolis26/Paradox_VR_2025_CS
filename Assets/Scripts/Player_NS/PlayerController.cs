@@ -24,7 +24,7 @@ namespace Player
         private void FixedUpdate()
         {
             // Aplicar movimiento al Rigidbody2D
-            rb.velocity = moveInput * speed;
+            rb.linearVelocity = moveInput * speed;
         }
 
         void Start()
