@@ -220,7 +220,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 391294061}
-  - component: {fileID: 391294062}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -243,21 +242,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &391294062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391294060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e68893ca7ef9c9449266ec8c5574659, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endLevelText: {fileID: 0}
-  endLevelObject: {fileID: 0}
-  playerHealth: {fileID: 0}
 --- !u!1 &520328025
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +375,7 @@ GameObject:
   - component: {fileID: 732993288}
   - component: {fileID: 732993287}
   - component: {fileID: 732993286}
+  - component: {fileID: 732993289}
   m_Layer: 5
   m_Name: BtnStart
   m_TagString: Untagged
@@ -461,7 +446,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 732993287}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 732993289}
+        m_TargetAssemblyTypeName: ScenesChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Game
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &732993287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +497,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732993284}
   m_CullTransparentMesh: 1
+--- !u!114 &732993289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732993284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc02c6a1913f583498d3825710fb677c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &844825155
 GameObject:
   m_ObjectHideFlags: 0
