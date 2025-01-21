@@ -3,8 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class ScenesChanger : MonoBehaviour
 {
-    public void ChangeScene(string sceneName)
+    public void ChangeScene()
     {
-        SceneManager.LoadScene(sceneName);
+        if (SceneManager.GetActiveScene().name == "Intro")
+        {
+            SceneManager.LoadScene("Game");
+        }
+        else if (SceneManager.GetActiveScene().name == "Game")
+        {
+            SceneManager.LoadScene("Game 1");
+        }
+        else if (SceneManager.GetActiveScene().name == "Game 1")
+        {
+            SceneManager.LoadScene("Game 2");
+        }
+        else
+        {
+            SceneManager.LoadScene("Game");
+        }
     }
 }

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Scripts_2
 {
@@ -13,6 +14,14 @@ namespace Scripts_2
             // Subscribe to events
             EventManager.StartListening("OnPlayerHealthChanged", UpdateHealthUI);
             EventManager.StartListening("OnPlayerDeath", ShowGameOverScreen);
+            
+            SceneManager.sceneLoaded += OnSceneLoaded;
+
+        }
+
+        private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+        {
+            Debug.Log("SceneLoadedFromUIManager");
         }
 
         private void OnDisable()
@@ -20,7 +29,12 @@ namespace Scripts_2
             // Unsubscribe from events
             EventManager.StopListening("OnPlayerHealthChanged", UpdateHealthUI);
             EventManager.StopListening("OnPlayerDeath", ShowGameOverScreen);
+            
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+
         }
+        
+        
 
         private void UpdateHealthUI()
         {

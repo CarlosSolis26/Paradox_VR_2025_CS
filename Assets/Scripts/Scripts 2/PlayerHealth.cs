@@ -1,10 +1,15 @@
+using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Scripts_2
 {
     public class PlayerHealth : MonoBehaviour
     {
         public int health = 100;
+        public int changeHealth = 5;
+        
+        //public UIManager uiManagerVar;
 
         public void TakeDamage(int damage)
         {
@@ -16,6 +21,32 @@ namespace Scripts_2
             }
 
             EventManager.TriggerEvent("OnPlayerHealthChanged");
+        }
+
+        public void AddHealth(int amount)
+        {
+            health += amount;
+        }
+
+        public void AddHealth()
+        {
+            health += changeHealth;
+            //uiManagerVar.healthText.text = health.ToString();
+            UIManager.Instance.healthText.text = health.ToString();
+            Debug.Log("Health: "+health);
+        }
+
+        public void ReduceHealth()
+        {
+            health -= changeHealth;
+            //uiManagerVar.healthText.text = health.ToString();
+            UIManager.Instance.healthText.text = health.ToString();
+            Debug.Log("Health: "+health);
+        }
+
+        public void AddHealth(float amount)
+        {
+            
         }
     }
 }

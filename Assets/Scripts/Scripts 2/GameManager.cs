@@ -1,5 +1,7 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 namespace Scripts_2
@@ -9,6 +11,34 @@ namespace Scripts_2
         [FormerlySerializedAs("txtFin")] public TMP_Text endLevelText;
         [FormerlySerializedAs("goFin")] public GameObject endLevelObject;
         public PlayerHealth playerHealth;
+        public GameObject hud;
+
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene sc, LoadSceneMode lsm)
+        {
+            if (sc.name == "Intro")
+            {
+                hud.SetActive(false);
+            }
+            else
+            {
+                if (sc.name == "Game")
+                {
+                    //Asignar valor 100 a health text
+                    UIManager.Instance.healthText.text = playerHealth.health.ToString();
+                    hud.SetActive(true);
+                }
+            }
+        }
 
         private void Update()
         {

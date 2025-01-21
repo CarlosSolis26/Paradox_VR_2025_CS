@@ -8,7 +8,7 @@ namespace Scripts_2
 
         // Helper function to initialize the singleton instance
     
-        protected virtual void Awake()
+        protected void Awake()
         {
             if (Instance == null)
             {

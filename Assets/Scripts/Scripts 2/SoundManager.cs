@@ -20,7 +20,7 @@ namespace Scripts_2
 
         private AudioSource soundEffectSource;
 
-        private AudioSource backgroundMusicSource;
+        public AudioSource backgroundMusicSource;
 
         private void Awake()
         {
@@ -35,7 +35,6 @@ namespace Scripts_2
             }
 
             soundEffectSource = gameObject.AddComponent<AudioSource>();
-            backgroundMusicSource = gameObject.AddComponent<AudioSource>();
 
             backgroundMusicSource.loop = true;
         }
