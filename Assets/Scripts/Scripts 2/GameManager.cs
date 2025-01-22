@@ -31,7 +31,7 @@ namespace Scripts_2
             }
             else
             {
-                if (sc.name == "Game")
+                if (sc.name == "VR_Scene_1_CS")
                 {
                     //Asignar valor 100 a health text
                     UIManager.Instance.healthText.text = playerHealth.health.ToString();
