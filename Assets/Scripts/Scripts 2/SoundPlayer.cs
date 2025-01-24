@@ -5,10 +5,13 @@ namespace Scripts_2
     public class SoundPlayer : MonoBehaviour
     {
         public AudioSource audioSource;
-
-        private void OnCollisionEnter(Collision collision)
+        
+        void OnTriggerEnter(Collider other)
         {
-            audioSource.Play();
+            if (other.CompareTag("Player"))
+            {
+                audioSource.Play();
+            }
         }
     }
 }
