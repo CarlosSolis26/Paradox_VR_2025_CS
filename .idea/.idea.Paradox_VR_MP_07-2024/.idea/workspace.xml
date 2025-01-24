@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d8dbb7b2-9c81-4a74-99c7-1c26cda09ac4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Paradox_VR_MP_07-2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Paradox_VR_MP_07-2024/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hud.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hud.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VR_Scene_1_CS.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VR_Scene_1_CS.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts 2/SoundPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts 2/SoundPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts 2/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts 2/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +133,7 @@
       <workItem from="1737568802053" duration="3496000" />
       <workItem from="1737579729941" duration="1001000" />
       <workItem from="1737692547605" duration="1855000" />
+      <workItem from="1737756579069" duration="2755000" />
     </task>
     <servers />
   </component>

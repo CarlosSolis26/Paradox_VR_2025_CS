@@ -12,6 +12,9 @@ namespace Scripts_2
         [FormerlySerializedAs("goFin")] public GameObject endLevelObject;
         public PlayerHealth playerHealth;
         public GameObject hud;
+        public GameObject mainMenu;
+        public GameObject pauseMenu;
+        public GameObject locomotionSystem;
 
         private void OnEnable()
         {
@@ -35,6 +38,8 @@ namespace Scripts_2
                 {
                     //Asignar valor 100 a health text
                     UIManager.Instance.healthText.text = playerHealth.health.ToString();
+                    Destroy(mainMenu);
+                    //mainMenu.SetActive(false);
                     hud.SetActive(true);
                 }
             }
@@ -53,14 +58,20 @@ namespace Scripts_2
 
         public void PauseGame()
         {
-            Time.timeScale = 0;
-            EventManager.TriggerEvent("OnGamePause");
+            pauseMenu.SetActive(true);
+            hud.SetActive(false);
+            locomotionSystem.SetActive(false);
+            //Time.timeScale = 0;
+            //EventManager.TriggerEvent("OnGamePause");
         }
 
         public void ResumeGame()
         {
-            Time.timeScale = 1;
-            EventManager.TriggerEvent("OnGameResume");
+            pauseMenu.SetActive(false);
+            hud.SetActive(true);
+            locomotionSystem.SetActive(true);
+            //Time.timeScale = 1;
+            //EventManager.TriggerEvent("OnGameResume");
         }
 
         public void EndLevel(bool success)
