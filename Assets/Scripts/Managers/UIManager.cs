@@ -2,13 +2,28 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Scripts_2
+namespace Managers
 {
-    public class UIManager : SingletonBase<UIManager>
+    public class UIManager :MonoBehaviour
     {
         public TextMeshProUGUI messageText;
         public TextMeshProUGUI healthText;
 
+        public static UIManager Instance;
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+        
         private void OnEnable()
         {
             // Subscribe to events

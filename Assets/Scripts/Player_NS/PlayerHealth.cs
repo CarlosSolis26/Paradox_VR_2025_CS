@@ -1,15 +1,12 @@
-using System;
+using Managers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Scripts_2
+namespace Player_NS
 {
     public class PlayerHealth : MonoBehaviour
     {
         public int health = 100;
         public int changeHealth = 5;
-        
-        //public UIManager uiManagerVar;
 
         public void TakeDamage(int damage)
         {

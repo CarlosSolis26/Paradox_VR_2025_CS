@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Scripts_2
+namespace Managers
 {
     public static class EventManager
     {

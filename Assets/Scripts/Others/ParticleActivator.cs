@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class ParticleActivator : MonoBehaviour
+namespace Others
 {
-    public ParticleSystem particles;
-
-    public void ActivateParticles()
+    public class ParticleActivator : MonoBehaviour
     {
-        particles.Play();
+        public ParticleSystem particles;
+
+        public void ActivateParticles()
+        {
+            particles.Play();
+        }
     }
 }

@@ -1,12 +1,15 @@
 using TMPro;
 using UnityEngine;
 
-public class ChangeTextOnButtonClick : MonoBehaviour
+namespace Others
 {
-    public TextMeshProUGUI txtText;
-
-    public void ChangeText()
+    public class ChangeTextOnButtonClick : MonoBehaviour
     {
-        txtText.text = "Este es el nuevo texto";
+        public TextMeshProUGUI txtText;
+
+        public void ChangeText()
+        {
+            txtText.text = "Este es el nuevo texto";
+        }
     }
 }

@@ -1,25 +1,28 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ScenesChanger : MonoBehaviour
+namespace Others
 {
-    public void ChangeScene()
+    public class ScenesChanger : MonoBehaviour
     {
-        if (SceneManager.GetActiveScene().name == "Intro")
+        public void ChangeScene()
         {
-            SceneManager.LoadScene("Game");
-        }
-        else if (SceneManager.GetActiveScene().name == "Game")
-        {
-            SceneManager.LoadScene("Game 1");
-        }
-        else if (SceneManager.GetActiveScene().name == "Game 1")
-        {
-            SceneManager.LoadScene("Game 2");
-        }
-        else
-        {
-            SceneManager.LoadScene("Game");
+            if (SceneManager.GetActiveScene().name == "Intro")
+            {
+                SceneManager.LoadScene("Game");
+            }
+            else if (SceneManager.GetActiveScene().name == "Game")
+            {
+                SceneManager.LoadScene("Game 1");
+            }
+            else if (SceneManager.GetActiveScene().name == "Game 1")
+            {
+                SceneManager.LoadScene("Game 2");
+            }
+            else
+            {
+                SceneManager.LoadScene("Game");
+            }
         }
     }
 }
