@@ -20,11 +20,6 @@ namespace Player_NS
             EventManager.TriggerEvent("OnPlayerHealthChanged");
         }
 
-        public void AddHealth(int amount)
-        {
-            health += amount;
-        }
-
         public void AddHealth()
         {
             health += changeHealth;
@@ -39,11 +34,6 @@ namespace Player_NS
             //uiManagerVar.healthText.text = health.ToString();
             UIManager.Instance.healthText.text = health.ToString();
             Debug.Log("Health: "+health);
-        }
-
-        public void AddHealth(float amount)
-        {
-            
         }
     }
 }

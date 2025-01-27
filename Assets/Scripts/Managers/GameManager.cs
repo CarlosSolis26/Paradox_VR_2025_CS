@@ -7,8 +7,8 @@ namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
-        
         public static GameManager Instance;
+        
         public TMP_Text endLevelText;
         public GameObject endLevelObject;
         public PlayerHealth playerHealth;
@@ -44,17 +44,17 @@ namespace Managers
         {
             if (sc.name == "Intro")
             {
-                hud.SetActive(false);
+                //hud.SetActive(false);
             }
             else
             {
-                if (sc.name == "VR_Scene_1_CS")
+                if (sc.name == "Level1")
                 {
                     //Asign value 100 to health text
-                    UIManager.Instance.healthText.text = playerHealth.health.ToString();
-                    Destroy(mainMenu);
+                    //UIManager.Instance.healthText.text = playerHealth.health.ToString();
+                    //Destroy(mainMenu);
                     //mainMenu.SetActive(false);
-                    hud.SetActive(true);
+                    //hud.SetActive(true);
                 }
             }
         }
@@ -88,7 +88,7 @@ namespace Managers
             //EventManager.TriggerEvent("OnGameResume");
         }
 
-        public void EndLevel(bool success)
+        /*public void EndLevel(bool success)
         {
             if (success)
             {
@@ -98,7 +98,7 @@ namespace Managers
             {
                 UIManager.Instance.ShowMessage("Reinicia el nivel.");
             }
-        }
+        }*/
 
         public void ShowEndScreen(string message)
         {
