@@ -1,5 +1,6 @@
+using System;
+using Others;
 using Player_NS;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,8 +10,8 @@ namespace Managers
     {
         public static GameManager Instance;
         
-        public TMP_Text endLevelText;
-        public GameObject endLevelObject;
+        //public TMP_Text endLevelText;
+        //public GameObject endLevelObject;
         public PlayerHealth playerHealth;
         public GameObject hud;
         public GameObject mainMenu;
@@ -32,15 +33,15 @@ namespace Managers
         
         private void OnEnable()
         {
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            //SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
         private void OnDisable()
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
+            //SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
-        private void OnSceneLoaded(Scene sc, LoadSceneMode lsm)
+        /*private void OnSceneLoaded(Scene sc, LoadSceneMode lsm)
         {
             if (sc.name == "Intro")
             {
@@ -52,22 +53,38 @@ namespace Managers
                 {
                     //Asign value 100 to health text
                     //UIManager.Instance.healthText.text = playerHealth.health.ToString();
-                    //Destroy(mainMenu);
                     //mainMenu.SetActive(false);
                     //hud.SetActive(true);
                 }
             }
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.P)) PauseGame();
-            else if (Input.GetKeyDown(KeyCode.R)) ResumeGame();
-        }
+        }*/
 
         public void StartGame()
         {
-            Debug.Log("Game Started!");
+            //if (SceneManager.GetActiveScene().name == "Intro")
+            //{
+                SceneManager.LoadScene("Level1");
+                UIManager.Instance.healthText.text = playerHealth.health.ToString();
+                mainMenu.SetActive(false);
+                hud.SetActive(true);
+            //}
+            //else if (SceneManager.GetActiveScene().name == "Level1")
+            //{
+                //SceneManager.LoadScene("Level2");
+            //}
+            /*else if (SceneManager.GetActiveScene().name == "Level2")
+            {
+                SceneManager.LoadScene("Intro");
+            }
+            else
+            {
+                SceneManager.LoadScene("Game");
+            }*/
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
         }
 
         public void PauseGame()
@@ -88,6 +105,15 @@ namespace Managers
             //EventManager.TriggerEvent("OnGameResume");
         }
 
+        /*public void Interact(Collider other)
+        {
+            IDestroy destroy = other.GetComponent<IDestroy>();
+            if (destroy != null)
+            {
+                destroy.DestroyItemObject();
+            }
+        }*/
+
         /*public void EndLevel(bool success)
         {
             if (success)
@@ -100,19 +126,19 @@ namespace Managers
             }
         }*/
 
-        public void ShowEndScreen(string message)
+        /*public void ShowEndScreen(string message)
         {
             endLevelObject.SetActive(true);
             endLevelText.text = message;
-        }
+        }*/
 
-        private void OnTriggerEnter(Collider other)
+        /*private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
                 //Destroy(other.gameObject);
                 ShowEndScreen("HAS GANADO");
             }
-        }
+        }*/
     }
 }

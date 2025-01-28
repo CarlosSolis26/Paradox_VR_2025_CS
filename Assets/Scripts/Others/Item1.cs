@@ -2,17 +2,23 @@ using UnityEngine;
 
 namespace Others
 {
-    public class Item1 : MonoBehaviour
+    public class Item1 : MonoBehaviour, IDestroy
     {
-        [SerializeField] GameObject wall;
+        [SerializeField] private GameObject wall;
 
-        private void OnTriggerEnter(Collider other)
+        /*public void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
                 Destroy(gameObject);
                 Destroy(wall);
             }
+        }*/
+
+        public void DestroyItemObject()
+        {
+            Destroy(gameObject);
+            Destroy(wall);
         }
     }
 }

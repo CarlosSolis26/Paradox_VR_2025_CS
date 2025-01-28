@@ -30,7 +30,7 @@ namespace Managers
             //EventManager.StartListening("OnPlayerHealthChanged", UpdateHealthUI);
             //EventManager.StartListening("OnPlayerDeath", ShowGameOverScreen);
             
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            //SceneManager.sceneLoaded += OnSceneLoaded;
 
         }
 
@@ -40,14 +40,14 @@ namespace Managers
             //EventManager.StopListening("OnPlayerHealthChanged", UpdateHealthUI);
             //EventManager.StopListening("OnPlayerDeath", ShowGameOverScreen);
             
-            SceneManager.sceneLoaded -= OnSceneLoaded;
+            //SceneManager.sceneLoaded -= OnSceneLoaded;
 
         }
         
-        private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+        /*private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
         {
             Debug.Log("SceneLoadedFromUIManager");
-        }
+        }*/
         
         /*private void UpdateHealthUI()
         {

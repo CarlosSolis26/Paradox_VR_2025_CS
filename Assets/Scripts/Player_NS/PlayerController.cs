@@ -1,3 +1,5 @@
+using System;
+using Others;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +12,7 @@ namespace Player_NS
         [SerializeField] private float damageAmount;
         [SerializeField] private Vector2 moveInput;
         [SerializeField] private Rigidbody rb;
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
@@ -19,8 +22,8 @@ namespace Player_NS
         {
             // Obtener el vector de movimiento del input
             moveInput = context.ReadValue<Vector2>();
-
         }
+
         private void FixedUpdate()
         {
             // Aplicar movimiento al Rigidbody2D
@@ -31,6 +34,7 @@ namespace Player_NS
         {
             health = 100f;
         }
+
         private void Update()
         {
             Move();
@@ -48,18 +52,46 @@ namespace Player_NS
             var movement = new Vector3(movH, 0, movV);
             transform.Translate(movement * speed * Time.deltaTime);
         }
+
         public void Fire()
         {
-
+            //Instanciar bullet
         }
 
         public void Damage(float amount)
         {
             //Debug.Log("The GameObject name is: " + gameObject.name + " | The Method name is: Damage");
 
-            if (Input.GetKey(KeyCode.Z)) 
+            if (Input.GetKey(KeyCode.Z))
                 health -= amount;
+        }
+
         
+        private void OnTriggerEnter(Collider other)
+        {
+            var iDestroy = other.gameObject.GetComponent<IDestroy>();
+
+            if (iDestroy != null)
+            {
+                iDestroy.DestroyItemObject();
+            }
         }
     }
 }
+
+/*
+ *Class bullet
+ * OnTriggerEnter(collider other){
+ *      var idestroy = other.getcomponet<IDestroy>();
+ *
+ *      if(idestroy != null ){
+ *          idestroy.DestroyItemObject();
+ *
+ *
+ *      }
+ *
+ *
+ * }
+ *
+ *
+ */
