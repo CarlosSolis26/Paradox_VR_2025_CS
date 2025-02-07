@@ -4,12 +4,28 @@ namespace Enemy_NS
 {
     public class Enemy : MonoBehaviour
     {
-        private void OnTriggerEnter(Collider other)
+        public GameObject item4;
+        public int enemyHealth = 100;
+
+        public void TakeDamage(int damage)
         {
-            if (other.CompareTag("Player"))
+            enemyHealth -= damage;
+            if (enemyHealth <= 0)
             {
-                Destroy(other.gameObject);
+                OnDeath();
             }
+        }
+        
+        public void OnDeath()
+        {
+            DropItem();
+            Destroy(gameObject);
+            //gameObject.SetActive(false);
+        }
+        
+        private void DropItem()
+        {
+            Instantiate(item4, transform.position, Quaternion.identity);
         }
     }
 }

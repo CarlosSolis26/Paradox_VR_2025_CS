@@ -13,6 +13,12 @@ namespace Player_NS
             {
                 iDestroy.DestroyItemObject();
             }
+            
+            if (other.CompareTag("Enemy"))
+            {
+                //Destroy(gameObject);
+                //gameObject.SetActive(false);
+            }
         }
     }
 }
