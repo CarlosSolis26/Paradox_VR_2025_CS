@@ -1,12 +1,13 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 namespace Managers
 {
     public class UIManager :MonoBehaviour
     {
         public static UIManager Instance;
+        public TMP_Text txtDiamonds;
         
         //public TextMeshProUGUI messageText;
         public TextMeshProUGUI healthText;
@@ -22,6 +23,16 @@ namespace Managers
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void Start()
+        {
+            UpdateTxtDiamonds("0");
+        }
+
+        public void UpdateTxtDiamonds(string text)
+        {
+            txtDiamonds.text = text;
         }
         
         private void OnEnable()

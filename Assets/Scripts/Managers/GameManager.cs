@@ -9,7 +9,7 @@ namespace Managers
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-        
+        private int diamonds = 0;
         //public TMP_Text endLevelText;
         //public GameObject endLevelObject;
         public PlayerHealth playerHealth;
@@ -29,6 +29,13 @@ namespace Managers
             {
                 Destroy(gameObject);
             }
+        }
+
+        public void UpdateDiamonds(int diamonds)
+        {
+            this.diamonds += diamonds;
+            UIManager.Instance.UpdateTxtDiamonds(this.diamonds.ToString());
+            print(this.diamonds);
         }
         
         private void OnEnable()
@@ -80,6 +87,11 @@ namespace Managers
             {
                 SceneManager.LoadScene("Game");
             }*/
+        }
+
+        public void Level2()
+        {
+            SceneManager.LoadScene("Level2");
         }
 
         public void QuitGame()
