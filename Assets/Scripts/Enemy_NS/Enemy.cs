@@ -1,11 +1,23 @@
+using System;
+using Managers;
 using UnityEngine;
 
 namespace Enemy_NS
 {
     public class Enemy : MonoBehaviour
     {
+        public float damage = 20f;
+        
         public GameObject item4;
         public int enemyHealth = 100;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                GameManager.Instance.UpdateDamageReceived(damage);
+            }
+        }
 
         public void TakeDamage(int damage)
         {

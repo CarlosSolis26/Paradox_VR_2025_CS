@@ -45,6 +45,21 @@ namespace Managers
             UIManager.Instance.UpdateTxtDiamonds(this.diamonds.ToString());
             print(this.diamonds);
         }
+
+        public void UpdateDamageReceived(float value)
+        {
+            float reduceLife = currentHealth - value;
+            if (reduceLife > 0f)
+            {
+                currentHealth = reduceLife;
+                UIManager.Instance.UpdateSldHealth(currentHealth/maxHealth);
+            }
+            else
+            {
+                currentHealth = 0f;
+                UIManager.Instance.UpdateSldHealth(0f);
+            }
+        }
         
         private void OnEnable()
         {
