@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
 //using UnityEngine.SceneManagement;
 
 namespace Managers
@@ -8,6 +10,7 @@ namespace Managers
     {
         public static UIManager Instance;
         public TMP_Text txtDiamonds;
+        public Slider sldHealth;
         
         //public TextMeshProUGUI messageText;
         public TextMeshProUGUI healthText;
@@ -28,11 +31,17 @@ namespace Managers
         private void Start()
         {
             UpdateTxtDiamonds("0");
+            UpdateSldHealth(1);
         }
 
         public void UpdateTxtDiamonds(string text)
         {
             txtDiamonds.text = text;
+        }
+
+        public void UpdateSldHealth(float value)
+        {
+            sldHealth.value = value;
         }
         
         private void OnEnable()

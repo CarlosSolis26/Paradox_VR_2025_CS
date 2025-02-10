@@ -10,6 +10,9 @@ namespace Managers
     {
         public static GameManager Instance;
         private int diamonds = 0;
+        private float maxHealth = 100f;
+        private float currentHealth = 0f;
+        
         //public TMP_Text endLevelText;
         //public GameObject endLevelObject;
         public PlayerHealth playerHealth;
@@ -29,6 +32,11 @@ namespace Managers
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void Start()
+        {
+            currentHealth = maxHealth;
         }
 
         public void UpdateDiamonds(int diamonds)
