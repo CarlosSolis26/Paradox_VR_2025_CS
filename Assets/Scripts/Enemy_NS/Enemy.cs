@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Managers;
 using UnityEngine;
 
@@ -7,9 +8,11 @@ namespace Enemy_NS
     public class Enemy : MonoBehaviour
     {
         public float damage = 20f;
-        
-        public GameObject item4;
         public int enemyHealth = 100;
+
+        public GameObject enemyMesh;
+        public GameObject item4;
+        public GameObject info6;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -24,18 +27,26 @@ namespace Enemy_NS
             enemyHealth -= damage;
             if (enemyHealth <= 0)
             {
-                OnDeath();
+                OnDeathEnemy();
             }
         }
         
-        public void OnDeath()
+        public void OnDeathEnemy()
         {
-            DropItem();
+            DropItemEnemy();
+            info6.SetActive(true);
+            enemyMesh.SetActive(false);
+            StartCoroutine(IenEnemy());
+        }
+
+        IEnumerator IenEnemy()
+        {
+            yield return new WaitForSeconds(8);
+            info6.SetActive(false);
             Destroy(gameObject);
-            //gameObject.SetActive(false);
         }
         
-        private void DropItem()
+        private void DropItemEnemy()
         {
             Instantiate(item4, transform.position, Quaternion.identity);
         }

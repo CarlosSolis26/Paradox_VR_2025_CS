@@ -12,9 +12,6 @@ namespace Managers
         public TMP_Text txtDiamonds;
         public Slider sldHealth;
         
-        //public TextMeshProUGUI messageText;
-        public TextMeshProUGUI healthText;
-        
         private void Awake()
         {
             if (Instance == null)

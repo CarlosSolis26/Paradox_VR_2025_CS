@@ -1,4 +1,5 @@
 using System;
+using Enemy_NS;
 using Others;
 using Player_NS;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace Managers
         
         //public TMP_Text endLevelText;
         //public GameObject endLevelObject;
-        public PlayerHealth playerHealth;
+        //public PlayerHealth playerHealth;
         public GameObject hud;
         public GameObject mainMenu;
         public GameObject pauseMenu;
@@ -94,7 +95,7 @@ namespace Managers
             //if (SceneManager.GetActiveScene().name == "Intro")
             //{
                 SceneManager.LoadScene("Level1");
-                UIManager.Instance.healthText.text = playerHealth.health.ToString();
+                //UIManager.Instance.healthText.text = playerHealth.health.ToString();
                 mainMenu.SetActive(false);
                 hud.SetActive(true);
             //}
