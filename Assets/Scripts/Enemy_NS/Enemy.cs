@@ -13,6 +13,7 @@ namespace Enemy_NS
         public GameObject enemyMesh;
         public GameObject item4;
         public GameObject info6;
+        public Transform spawnPoint;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -48,7 +49,7 @@ namespace Enemy_NS
         
         private void DropItemEnemy()
         {
-            Instantiate(item4, transform.position, Quaternion.identity);
+            Instantiate(item4, spawnPoint.position, Quaternion.identity);
         }
     }
 }

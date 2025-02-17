@@ -3539,7 +3539,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Cuidado con el enemigo, \nsi lo topas morir\xE1s."
+  m_Text: "Cuidado con el enemigo, si lo topas recibiras da\xF1o hasta morir."
 --- !u!222 &462465232
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6541,6 +6541,11 @@ PrefabInstance:
     - target: {fileID: 5628286625164937004, guid: 3e07eccb5e6f459d886de95044adb1d9,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219902843990209629, guid: 3e07eccb5e6f459d886de95044adb1d9,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6895887226161143353, guid: 3e07eccb5e6f459d886de95044adb1d9,
@@ -17981,6 +17986,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1539455405}
+  - {fileID: 1734191175}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1388818022
@@ -17998,8 +18004,9 @@ MonoBehaviour:
   damage: 20
   enemyHealth: 100
   enemyMesh: {fileID: 1539455406}
-  item4: {fileID: 3577564184194915760, guid: ff7026c2581a293418fad0a753f2f8ca, type: 3}
+  item4: {fileID: 5691980770107867727, guid: ff7026c2581a293418fad0a753f2f8ca, type: 3}
   info6: {fileID: 1966533305}
+  spawnPoint: {fileID: 1734191175}
 --- !u!136 &1388818023
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18510,8 +18517,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Si recoges el \xEDtem que est\xE1 cerca del enemigo podr\xE1s acabar con
-    \xE9l."
+  m_Text: "Aqu\xED podr\xE1s instanciar esferas para hacerle da\xF1o al enemigo hasta
+    eliminarlo."
 --- !u!222 &1450002562
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19922,7 +19929,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Con este item podr\xE1s abrir el muro que esconde el diamante."
+  m_Text: Lleva este item para destruir el muro que esconde el diamante.
 --- !u!222 &1552289956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21089,6 +21096,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1734191174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1734191175}
+  m_Layer: 0
+  m_Name: spawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1734191175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734191174}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1388818021}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1753182323
 GameObject:
   m_ObjectHideFlags: 0
@@ -22240,7 +22278,7 @@ GameObject:
   - component: {fileID: 1891082302}
   m_Layer: 0
   m_Name: PolyShape (20)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22275,11 +22313,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 810921462}
 --- !u!33 &1891082303

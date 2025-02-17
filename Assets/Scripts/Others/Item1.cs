@@ -6,15 +6,6 @@ namespace Others
     {
         [SerializeField] private GameObject wall;
 
-        /*public void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                Destroy(gameObject);
-                Destroy(wall);
-            }
-        }*/
-
         public void DestroyItemObject()
         {
             Destroy(gameObject);
