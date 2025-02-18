@@ -10429,7 +10429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4af5643d6f44b4abd76d2c6e88f9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDestroy: 5
+  timeToDestroy: 6
 --- !u!1 &783056856
 GameObject:
   m_ObjectHideFlags: 0
@@ -22953,6 +22953,7 @@ MonoBehaviour:
   item4: {fileID: 5691980770107867727, guid: ff7026c2581a293418fad0a753f2f8ca, type: 3}
   info6: {fileID: 1966533305}
   spawnPoint: {fileID: 1734191175}
+  instantiateSphere: {fileID: 0}
 --- !u!136 &1388818023
 CapsuleCollider:
   m_ObjectHideFlags: 0

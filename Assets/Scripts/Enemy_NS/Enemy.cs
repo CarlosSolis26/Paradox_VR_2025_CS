@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using Managers;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Enemy_NS
 {
@@ -14,6 +14,8 @@ namespace Enemy_NS
         public GameObject item4;
         public GameObject info6;
         public Transform spawnPoint;
+        public Canvas instantiateSphere;
+        public Slider sldHealthEnemy;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -26,21 +28,23 @@ namespace Enemy_NS
         public void TakeDamage(int damage)
         {
             enemyHealth -= damage;
+            UpdateSldHealthEnemy(enemyHealth);
             if (enemyHealth <= 0)
             {
                 OnDeathEnemy();
             }
         }
-        
-        public void OnDeathEnemy()
+
+        private void OnDeathEnemy()
         {
             DropItemEnemy();
             info6.SetActive(true);
             enemyMesh.SetActive(false);
+            instantiateSphere.gameObject.SetActive(false);
             StartCoroutine(IenEnemy());
         }
 
-        IEnumerator IenEnemy()
+        private IEnumerator IenEnemy()
         {
             yield return new WaitForSeconds(8);
             info6.SetActive(false);
@@ -50,6 +54,11 @@ namespace Enemy_NS
         private void DropItemEnemy()
         {
             Instantiate(item4, spawnPoint.position, Quaternion.identity);
+        }
+
+        private void UpdateSldHealthEnemy(float value)
+        {
+            sldHealthEnemy.value = value;
         }
     }
 }
