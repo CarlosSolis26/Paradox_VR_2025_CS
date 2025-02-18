@@ -10,6 +10,7 @@ namespace Managers
     {
         public static UIManager Instance;
         public TMP_Text txtDiamonds;
+        public TMP_Text txtCoins;
         public Slider sldHealth;
         
         private void Awake()
