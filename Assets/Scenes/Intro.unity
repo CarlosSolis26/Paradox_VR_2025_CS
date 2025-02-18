@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e68893ca7ef9c9449266ec8c5574659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newLevel: Level1
   hud: {fileID: 863418844}
   mainMenu: {fileID: 2026640620}
   pauseMenu: {fileID: 1249551488}

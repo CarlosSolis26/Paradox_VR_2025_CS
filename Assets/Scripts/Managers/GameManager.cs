@@ -10,6 +10,7 @@ namespace Managers
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
+        [SerializeField] private string newLevel;
         private int diamonds = 0;
         private float maxHealth = 100f;
         private float currentHealth = 0f;
@@ -94,7 +95,7 @@ namespace Managers
         {
             //if (SceneManager.GetActiveScene().name == "Intro")
             //{
-                SceneManager.LoadScene("Level1");
+                SceneManager.LoadScene(newLevel);
                 //UIManager.Instance.healthText.text = playerHealth.health.ToString();
                 mainMenu.SetActive(false);
                 hud.SetActive(true);
