@@ -9,9 +9,13 @@ namespace Managers
     public class UIManager :MonoBehaviour
     {
         public static UIManager Instance;
+        
         public TMP_Text txtDiamonds;
         public Slider sldHealth;
         public TMP_Text showTxtDiamonds;
+        public GameObject hud;
+        public GameObject screenDeath;
+        public TMP_Text txtDeath;
         
         private void Awake()
         {
@@ -28,18 +32,18 @@ namespace Managers
 
         private void Start()
         {
-            UpdateTxtDiamonds("0");
             UpdateSldHealth(1);
-        }
-
-        public void UpdateTxtDiamonds(string text)
-        {
-            txtDiamonds.text = text;
+            UpdateTxtDiamonds("0");
         }
 
         public void UpdateSldHealth(float value)
         {
             sldHealth.value = value;
+        }
+        
+        public void UpdateTxtDiamonds(string text)
+        {
+            txtDiamonds.text = text;
         }
 
         public void ShowTxtDiamonds()
@@ -50,6 +54,27 @@ namespace Managers
         public void HideTxtDiamonds()
         {
             showTxtDiamonds.gameObject.SetActive(false);
+        }
+
+        public void ActivateHud()
+        {
+            hud.SetActive(true);
+        }
+
+        public void DeactivateHud()
+        {
+            hud.SetActive(false);
+        }
+
+        public void ShowScreenDeath(string message)
+        {
+            screenDeath.SetActive(true);
+            txtDeath.text = message;
+        }
+        
+        public void HideScreenDeath()
+        {
+            screenDeath.SetActive(false);
         }
         
         private void OnEnable()

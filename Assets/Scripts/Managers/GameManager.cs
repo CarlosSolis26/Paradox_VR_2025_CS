@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Enemy_NS;
 using Others;
 using Player_NS;
@@ -10,18 +11,18 @@ namespace Managers
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-        [SerializeField] private string newLevel;
-        private int diamonds = 0;
+        //[SerializeField] private string newLevel;
+        private int diamonds;
         private float maxHealth = 100f;
-        private float currentHealth = 0f;
+        private float currentHealth;
         
         //public TMP_Text endLevelText;
         //public GameObject endLevelObject;
         //public PlayerHealth playerHealth;
-        public GameObject hud;
         public GameObject mainMenu;
         public GameObject pauseMenu;
         public GameObject locomotionSystem;
+        private bool sceneDeath;
 
         private void Awake()
         {
@@ -60,7 +61,20 @@ namespace Managers
             {
                 currentHealth = 0f;
                 UIManager.Instance.UpdateSldHealth(0f);
+                UIManager.Instance.DeactivateHud();
+                //SceneManager.LoadScene("SceneDeath");
+                UIManager.Instance.ShowScreenDeath("HAS PERDIDO");
+                locomotionSystem.SetActive(false);
+                StartCoroutine(IenScreenDeath());
             }
+        }
+
+        private IEnumerator IenScreenDeath()
+        {
+            yield return new WaitForSeconds(6);
+            UIManager.Instance.HideScreenDeath();
+            sceneDeath = true;
+            pauseMenu.SetActive(true);
         }
         
         private void OnEnable()
@@ -95,10 +109,10 @@ namespace Managers
         {
             //if (SceneManager.GetActiveScene().name == "Intro")
             //{
-                SceneManager.LoadScene(newLevel);
+                SceneManager.LoadScene("Level1");
                 //UIManager.Instance.healthText.text = playerHealth.health.ToString();
                 mainMenu.SetActive(false);
-                hud.SetActive(true);
+                UIManager.Instance.ActivateHud();
             //}
             //else if (SceneManager.GetActiveScene().name == "Level1")
             //{
@@ -114,6 +128,14 @@ namespace Managers
             }*/
         }
 
+        public void Menu()
+        {
+            locomotionSystem.SetActive(true);
+            SceneManager.LoadScene("Intro");
+            pauseMenu.SetActive(false);
+            mainMenu.SetActive(true);
+        }
+
         public void Level2()
         {
             SceneManager.LoadScene("Level2");
@@ -127,7 +149,7 @@ namespace Managers
         public void PauseGame()
         {
             pauseMenu.SetActive(true);
-            hud.SetActive(false);
+            UIManager.Instance.DeactivateHud();
             locomotionSystem.SetActive(false);
             //Time.timeScale = 0;
             //EventManager.TriggerEvent("OnGamePause");
@@ -135,8 +157,12 @@ namespace Managers
 
         public void ResumeGame()
         {
+            if (sceneDeath)
+            {
+                SceneManager.LoadScene("Level1");
+            }
             pauseMenu.SetActive(false);
-            hud.SetActive(true);
+            UIManager.Instance.ActivateHud();
             locomotionSystem.SetActive(true);
             //Time.timeScale = 1;
             //EventManager.TriggerEvent("OnGameResume");
