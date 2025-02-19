@@ -10,8 +10,8 @@ namespace Managers
     {
         public static UIManager Instance;
         public TMP_Text txtDiamonds;
-        public TMP_Text txtCoins;
         public Slider sldHealth;
+        public TMP_Text showTxtDiamonds;
         
         private void Awake()
         {
@@ -40,6 +40,16 @@ namespace Managers
         public void UpdateSldHealth(float value)
         {
             sldHealth.value = value;
+        }
+
+        public void ShowTxtDiamonds()
+        {
+            showTxtDiamonds.gameObject.SetActive(true);
+        }
+        
+        public void HideTxtDiamonds()
+        {
+            showTxtDiamonds.gameObject.SetActive(false);
         }
         
         private void OnEnable()
