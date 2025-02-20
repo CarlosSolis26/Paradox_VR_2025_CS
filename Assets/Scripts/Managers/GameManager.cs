@@ -12,7 +12,7 @@ namespace Managers
     {
         public static GameManager Instance;
         //[SerializeField] private string newLevel;
-        private int diamonds;
+        public int diamonds;
         private float maxHealth = 100f;
         private float currentHealth;
         

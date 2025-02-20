@@ -32,7 +32,7 @@ namespace Managers
 
         private void Start()
         {
-            UpdateSldHealth(1);
+            UpdateSldHealth(1f);
             UpdateTxtDiamonds("0");
         }
 
