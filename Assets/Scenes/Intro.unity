@@ -297,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e68893ca7ef9c9449266ec8c5574659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diamonds: 0
   mainMenu: {fileID: 2026640620}
   pauseMenu: {fileID: 1249551488}
   locomotionSystem: {fileID: 2105885306}
@@ -2751,6 +2752,11 @@ PrefabInstance:
     - target: {fileID: 1495973896363648480, guid: 4f1621e531e0cdc4aa0f7cb46ce474c1,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846342719789749777, guid: 4f1621e531e0cdc4aa0f7cb46ce474c1,
+        type: 3}
+      propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5834669110387551367, guid: 4f1621e531e0cdc4aa0f7cb46ce474c1,
