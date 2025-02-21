@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 520431759}
   - component: {fileID: 520431758}
   m_Layer: 5
-  m_Name: ScreenDeath
+  m_Name: ScreenFinal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 956167791}
   - component: {fileID: 956167790}
   m_Layer: 5
-  m_Name: TxtDeath
+  m_Name: TxtFinal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1125,8 +1125,8 @@ MonoBehaviour:
   sldHealth: {fileID: 1352014958}
   showTxtDiamonds: {fileID: 1713044075}
   hud: {fileID: 863418844}
-  screenDeath: {fileID: 520431756}
-  txtDeath: {fileID: 956167790}
+  screenFinal: {fileID: 520431756}
+  txtFinal: {fileID: 956167790}
 --- !u!1 &1125973058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1351,7 @@ GameObject:
   - component: {fileID: 1406248108}
   - component: {fileID: 1406248107}
   m_Layer: 5
-  m_Name: ImgDeath
+  m_Name: ImgFinal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
