@@ -63,7 +63,7 @@ namespace Managers
                 UIManager.Instance.UpdateSldHealth(0f);
                 UIManager.Instance.DeactivateHud();
                 //SceneManager.LoadScene("SceneDeath");
-                UIManager.Instance.ShowScreenDeath("HAS PERDIDO");
+                UIManager.Instance.ShowScreenFinal("HAS PERDIDO");
                 locomotionSystem.SetActive(false);
                 StartCoroutine(IenScreenDeath());
             }
@@ -72,7 +72,7 @@ namespace Managers
         private IEnumerator IenScreenDeath()
         {
             yield return new WaitForSeconds(6);
-            UIManager.Instance.HideScreenDeath();
+            UIManager.Instance.HideScreenFinal();
             sceneDeath = true;
             pauseMenu.SetActive(true);
         }

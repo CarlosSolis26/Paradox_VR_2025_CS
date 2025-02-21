@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 //using UnityEngine.SceneManagement;
@@ -14,8 +15,8 @@ namespace Managers
         public Slider sldHealth;
         public TMP_Text showTxtDiamonds;
         public GameObject hud;
-        public GameObject screenDeath;
-        public TMP_Text txtDeath;
+        [FormerlySerializedAs("screenDeath")] public GameObject screenFinal;
+        [FormerlySerializedAs("txtDeath")] public TMP_Text txtFinal;
         
         private void Awake()
         {
@@ -66,15 +67,15 @@ namespace Managers
             hud.SetActive(false);
         }
 
-        public void ShowScreenDeath(string message)
+        public void ShowScreenFinal(string message)
         {
-            screenDeath.SetActive(true);
-            txtDeath.text = message;
+            screenFinal.SetActive(true);
+            txtFinal.text = message;
         }
         
-        public void HideScreenDeath()
+        public void HideScreenFinal()
         {
-            screenDeath.SetActive(false);
+            screenFinal.SetActive(false);
         }
         
         private void OnEnable()
