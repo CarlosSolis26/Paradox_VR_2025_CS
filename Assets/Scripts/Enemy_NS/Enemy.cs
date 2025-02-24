@@ -18,6 +18,8 @@ namespace Enemy_NS
         public Slider sldHealthEnemy;
         public ParticleSystem particle;
 
+        public GameObject info2;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -43,6 +45,7 @@ namespace Enemy_NS
             info6.SetActive(true);
             enemyMesh.SetActive(false);
             instantiateSphere.gameObject.SetActive(false);
+            Destroy(info2);
             StartCoroutine(IenEnemy());
         }
 
