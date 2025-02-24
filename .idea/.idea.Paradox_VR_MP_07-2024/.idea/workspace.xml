@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d8dbb7b2-9c81-4a74-99c7-1c26cda09ac4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Paradox_VR_MP_07-2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Paradox_VR_MP_07-2024/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Animaciones/Idle.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/Animaciones/Idle.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Survivor A Lusth.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/Survivor A Lusth.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Peasant_Man/NPC.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Peasant_Man/NPC.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Peasant_Man/Walking.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Peasant_Man/Walking.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullet2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/17Feb_NPC.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/17Feb_NPC.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/Final.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Others/Final.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy_NS/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy_NS/Enemy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +162,7 @@
       <workItem from="1740274740125" duration="3467000" />
       <workItem from="1740337103392" duration="15162000" />
       <workItem from="1740400926661" duration="701000" />
+      <workItem from="1740437530066" duration="1664000" />
     </task>
     <servers />
   </component>
