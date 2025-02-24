@@ -1,5 +1,5 @@
-using System;
 using Enemy_NS;
+using Managers;
 using UnityEngine;
 
 namespace Others
@@ -12,11 +12,12 @@ namespace Others
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
-                Enemy enemyHealth = other.gameObject.GetComponent<Enemy>();
+                var enemyHealth = other.gameObject.GetComponent<Enemy>();
                 if (enemyHealth != null)
                 {
                     enemyHealth.TakeDamage(damageAmount);
                 }
+                SoundManager.Instance.PlaySoundDamageEnemy();
                 Destroy(gameObject);
             }
         }

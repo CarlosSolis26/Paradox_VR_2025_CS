@@ -9,6 +9,7 @@ namespace Others
         {
             if (other.CompareTag("Player"))
             {
+                SoundManager.Instance.PlaySoundWin();
                 GameManager.Instance.Level2();
             }
         }

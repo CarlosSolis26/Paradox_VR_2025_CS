@@ -1,10 +1,10 @@
+using Others;
 using UnityEngine;
 
 namespace Managers
 {
     public class SoundManager : MonoBehaviour
     {
-        // Singleton instance
         public static SoundManager Instance;
 
         public AudioClip objectSound1;
@@ -22,6 +22,17 @@ namespace Managers
 
         public AudioSource backgroundMusicSource;
 
+        
+        public AudioSource musicMenu;
+        public AudioSource musicGame;
+        public AudioSource soundDiamond;
+        public AudioSource soundSphere;
+        public AudioSource soundDamageEnemy;
+        public AudioSource soundDamagePlayer;
+        public AudioSource soundWin;
+        public AudioSource soundButton;
+        public AudioSource soundCylinder;
+
         private void Awake()
         {
             if (Instance == null)
@@ -34,14 +45,71 @@ namespace Managers
                 Destroy(gameObject);
             }
 
-            soundEffectSource = gameObject.AddComponent<AudioSource>();
+            //soundEffectSource = gameObject.AddComponent<AudioSource>();
 
-            backgroundMusicSource.loop = true;
+            //backgroundMusicSource.loop = true;
         }
 
         private void Start()
         {
-            PlayBackgroundMusicNormal();
+            //PlayBackgroundMusicNormal();
+            PlayMusicMenu();
+            
+        }
+
+        public void PlayMusicMenu()
+        {
+            musicMenu.Play();
+        }
+
+        public void StopmusicMenu()
+        {
+            musicMenu.Stop();
+        }
+
+        public void PlayMusicGame()
+        {
+            musicGame.Play();
+        }
+
+        public void StopMusicGame()
+        {
+            musicGame.Stop();
+        }
+
+        public void PlaySoundDiamond()
+        {
+            soundDiamond.Play();
+        }
+
+        public void PlaySoundSphere()
+        {
+            soundSphere.Play();
+        }
+
+        public void PlaySoundDamageEnemy()
+        {
+            soundDamageEnemy.Play();
+        }
+
+        public void PlaySoundDamagePlayer()
+        {
+            soundDamagePlayer.Play();
+        }
+
+        public void PlaySoundWin()
+        {
+            soundWin.Play();
+        }
+
+        public void PlaySoundButton()
+        {
+            soundButton.Play();
+        }
+
+        public void PlaySoundCylinder()
+        {
+            soundCylinder.Play();
         }
 
         public void PlayObjectSound1()
@@ -74,14 +142,14 @@ namespace Managers
             soundEffectSource.PlayOneShot(buttonSound3);
         }
 
-        public void PlayBackgroundMusicNormal()
+        /*public void PlayBackgroundMusicNormal()
         {
             if (backgroundMusicSource.clip != backgroundMusicNormal)
             {
                 backgroundMusicSource.clip = backgroundMusicNormal;
                 backgroundMusicSource.Play();
             }
-        }
+        }*/
 
         public void PlayBackgroundMusicGameOver()
         {
