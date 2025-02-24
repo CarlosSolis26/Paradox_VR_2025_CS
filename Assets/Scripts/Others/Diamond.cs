@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using Managers;
 using UnityEngine;
 
@@ -15,8 +14,9 @@ namespace Others
             GameManager.Instance.UpdateDiamonds(1);
             //Destroy(gameObject);
             diamondMesh.SetActive(false);
+            SoundManager.Instance.PlaySoundDiamond();
             particle.Play();
-            UIManager.Instance.ShowTxtDiamonds();
+            UIManager.Instance.ShowTxtItems("Has ganado un diamante");
             StartCoroutine(IenDiamond());
         }
 
@@ -28,9 +28,9 @@ namespace Others
 
         private IEnumerator IenDiamond()
         {
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(5f);
             particle.Stop();
-            UIManager.Instance.HideTxtDiamonds();
+            UIManager.Instance.HideTxtItems();
             Destroy(gameObject);
         }
     }

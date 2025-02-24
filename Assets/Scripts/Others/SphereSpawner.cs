@@ -1,3 +1,4 @@
+using Managers;
 using UnityEngine;
 
 namespace Others
@@ -9,6 +10,7 @@ namespace Others
 
         public void SpawnSphere()
         {
+            SoundManager.Instance.PlaySoundButton();
             Instantiate(spherePrefab, spawnPoint.position, Quaternion.identity);
         }
     }

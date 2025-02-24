@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -13,7 +14,8 @@ namespace Managers
         
         public TMP_Text txtDiamonds;
         public Slider sldHealth;
-        public TMP_Text showTxtDiamonds;
+        public GameObject panelItems;
+        public TMP_Text txtItems;
         public GameObject hud;
         [FormerlySerializedAs("screenDeath")] public GameObject screenFinal;
         [FormerlySerializedAs("txtDeath")] public TMP_Text txtFinal;
@@ -47,14 +49,15 @@ namespace Managers
             txtDiamonds.text = text;
         }
 
-        public void ShowTxtDiamonds()
+        public void ShowTxtItems(string message)
         {
-            showTxtDiamonds.gameObject.SetActive(true);
+            panelItems.gameObject.SetActive(true);
+            txtItems.text = message;
         }
         
-        public void HideTxtDiamonds()
+        public void HideTxtItems()
         {
-            showTxtDiamonds.gameObject.SetActive(false);
+            panelItems.gameObject.SetActive(false);
         }
 
         public void ActivateHud()

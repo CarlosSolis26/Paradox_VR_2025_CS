@@ -1,3 +1,4 @@
+using Managers;
 using UnityEngine;
 
 namespace Others
@@ -8,6 +9,7 @@ namespace Others
         {
             if (other.gameObject.CompareTag("Wall"))
             {
+                SoundManager.Instance.PlaySoundCylinder();
                 Destroy(other.gameObject);
                 Destroy(gameObject);
             }

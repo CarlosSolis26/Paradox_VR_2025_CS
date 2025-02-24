@@ -16,6 +16,7 @@ namespace Enemy_NS
         public Transform spawnPoint;
         public Canvas instantiateSphere;
         public Slider sldHealthEnemy;
+        public ParticleSystem particle;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -38,6 +39,7 @@ namespace Enemy_NS
         private void OnDeathEnemy()
         {
             DropItemEnemy();
+            particle.Play();
             info6.SetActive(true);
             enemyMesh.SetActive(false);
             instantiateSphere.gameObject.SetActive(false);
@@ -47,6 +49,7 @@ namespace Enemy_NS
         private IEnumerator IenEnemy()
         {
             yield return new WaitForSeconds(8);
+            particle.Stop();
             info6.SetActive(false);
             Destroy(gameObject);
         }
@@ -59,6 +62,11 @@ namespace Enemy_NS
         private void UpdateSldHealthEnemy(float value)
         {
             sldHealthEnemy.value = value;
+        }
+
+        public void HideMesh()
+        {
+            enemyMesh.SetActive(false);
         }
     }
 }

@@ -1,8 +1,4 @@
-using System;
 using System.Collections;
-using Enemy_NS;
-using Others;
-using Player_NS;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,8 +9,8 @@ namespace Managers
         public static GameManager Instance;
         //[SerializeField] private string newLevel;
         public int diamonds;
-        private float maxHealth = 100f;
-        private float currentHealth;
+        public float maxHealth = 100f;
+        public float currentHealth;
         
         //public TMP_Text endLevelText;
         //public GameObject endLevelObject;
@@ -52,6 +48,7 @@ namespace Managers
         public void UpdateDamageReceived(float value)
         {
             float reduceLife = currentHealth - value;
+            SoundManager.Instance.PlaySoundDamagePlayer();
             if (reduceLife > 0f)
             {
                 currentHealth = reduceLife;
@@ -109,10 +106,12 @@ namespace Managers
         {
             //if (SceneManager.GetActiveScene().name == "Intro")
             //{
-                SceneManager.LoadScene("Level1");
-                //UIManager.Instance.healthText.text = playerHealth.health.ToString();
-                mainMenu.SetActive(false);
-                UIManager.Instance.ActivateHud();
+            SoundManager.Instance.StopmusicMenu();
+            SceneManager.LoadScene("Level1");
+            SoundManager.Instance.PlayMusicGame();
+            //UIManager.Instance.healthText.text = playerHealth.health.ToString();
+            mainMenu.SetActive(false);
+            UIManager.Instance.ActivateHud();
             //}
             //else if (SceneManager.GetActiveScene().name == "Level1")
             //{
@@ -143,12 +142,15 @@ namespace Managers
 
         public void QuitGame()
         {
+            SoundManager.Instance.StopmusicMenu();
             Application.Quit();
         }
 
         public void PauseGame()
         {
             pauseMenu.SetActive(true);
+            SoundManager.Instance.StopMusicGame();
+            SoundManager.Instance.PlayMusicMenu();
             UIManager.Instance.DeactivateHud();
             locomotionSystem.SetActive(false);
             //Time.timeScale = 0;
@@ -162,6 +164,8 @@ namespace Managers
                 SceneManager.LoadScene("Level1");
             }
             pauseMenu.SetActive(false);
+            SoundManager.Instance.StopmusicMenu();
+            SoundManager.Instance.PlayMusicGame();
             UIManager.Instance.ActivateHud();
             locomotionSystem.SetActive(true);
             //Time.timeScale = 1;
