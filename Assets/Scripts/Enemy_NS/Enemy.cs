@@ -1,6 +1,7 @@
 using System.Collections;
 using Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Enemy_NS
@@ -16,7 +17,9 @@ namespace Enemy_NS
         public Transform spawnPoint;
         public Canvas instantiateSphere;
         public Slider sldHealthEnemy;
-        public ParticleSystem particle;
+        public ParticleSystem particleDeath;
+        public ParticleSystem particleBlood;
+        public ParticleSystem particleTornado;
 
         public GameObject info2;
 
@@ -36,12 +39,15 @@ namespace Enemy_NS
             {
                 OnDeathEnemy();
             }
+            particleBlood.Play();
+            SoundManager.Instance.PlaySoundDamageEnemy();
         }
 
         private void OnDeathEnemy()
         {
             DropItemEnemy();
-            particle.Play();
+            particleTornado.Play();
+            particleDeath.Play();
             info6.SetActive(true);
             enemyMesh.SetActive(false);
             instantiateSphere.gameObject.SetActive(false);
@@ -52,7 +58,7 @@ namespace Enemy_NS
         private IEnumerator IenEnemy()
         {
             yield return new WaitForSeconds(8);
-            particle.Stop();
+            particleTornado.Stop();
             info6.SetActive(false);
             Destroy(gameObject);
         }

@@ -74,7 +74,8 @@ namespace Managers
 
         public void StopMusicGame()
         {
-            musicGame.Stop();
+            //musicGame.Stop();
+            musicGame.Pause();
         }
 
         public void PlaySoundDiamond()

@@ -8,6 +8,7 @@ namespace Others
     {
         public GameObject diamondMesh;
         public ParticleSystem particle;
+        public ParticleSystem particlePickupDiamond;
         
         public void DestroyItemObject()
         {
@@ -15,6 +16,7 @@ namespace Others
             //Destroy(gameObject);
             diamondMesh.SetActive(false);
             SoundManager.Instance.PlaySoundDiamond();
+            particlePickupDiamond.Play();
             particle.Play();
             UIManager.Instance.ShowTxtItems("Has ganado un diamante");
             StartCoroutine(IenDiamond());
