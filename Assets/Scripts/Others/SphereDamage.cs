@@ -17,7 +17,7 @@ namespace Others
                 {
                     enemyHealth.TakeDamage(damageAmount);
                 }
-                SoundManager.Instance.PlaySoundDamageEnemy();
+                //SoundManager.Instance.PlaySoundDamageEnemy();
                 Destroy(gameObject);
             }
         }
