@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d8dbb7b2-9c81-4a74-99c7-1c26cda09ac4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Paradox_VR_MP_07-2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Paradox_VR_MP_07-2024/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packs/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Img/flecha.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Img/flecha.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Packs/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hud.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hud.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy_NS/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy_NS/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/TestAnim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Others/TestAnim.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +172,7 @@
       <workItem from="1740958624434" duration="12600000" />
       <workItem from="1741024350164" duration="296000" />
       <workItem from="1741037564676" duration="10636000" />
+      <workItem from="1741125915195" duration="4170000" />
     </task>
     <servers />
   </component>

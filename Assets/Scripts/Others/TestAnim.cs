@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Others
 {
-    public class TesstAnim : MonoBehaviour
+    public class TestAnim : MonoBehaviour
     {
         [SerializeField] private bool isAnimEnabled;
         [SerializeField] private Animator animator;

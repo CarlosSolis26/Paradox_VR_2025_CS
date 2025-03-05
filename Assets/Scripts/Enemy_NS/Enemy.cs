@@ -57,9 +57,9 @@ namespace Enemy_NS
 
         private IEnumerator IenEnemy()
         {
-            yield return new WaitForSeconds(8);
+            yield return new WaitForSeconds(6);
             particleTornado.Stop();
-            info6.SetActive(false);
+            //info6.SetActive(false);
             Destroy(gameObject);
         }
         
