@@ -12,6 +12,7 @@ namespace Others
             SoundManager.Instance.PlaySoundButton();
             GameManager.Instance.UpdateDiamonds(-1);
             UIManager.Instance.UpdateSldHealth(1f);
+            GameManager.Instance.currentHealth = GameManager.Instance.maxHealth;
         }
     }
 }
