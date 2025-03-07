@@ -9,10 +9,12 @@ namespace Others
         public GameObject item2Mesh;
         [SerializeField] private GameObject wall;
         public ParticleSystem particle;
+        public GameObject info5;
 
         public void DestroyItemObject()
         {
             item2Mesh.SetActive(false);
+            info5.SetActive(false);
             Destroy(wall);
             SoundManager.Instance.PlaySoundSphere();
             particle.Play();

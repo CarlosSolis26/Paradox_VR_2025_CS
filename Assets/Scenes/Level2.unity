@@ -18857,6 +18857,7 @@ MonoBehaviour:
   enemyMesh: {fileID: 1539455406}
   item4: {fileID: 2114928218126694019, guid: 47f74fbc30983e648921339559ec9da4, type: 3}
   info6: {fileID: 1966533305}
+  info7: {fileID: 0}
   spawnPoint: {fileID: 1734191175}
   instantiateSphere: {fileID: 1933986594}
   sldHealthEnemy: {fileID: 762053402}

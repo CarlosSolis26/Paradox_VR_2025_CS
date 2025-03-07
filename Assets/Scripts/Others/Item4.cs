@@ -13,7 +13,6 @@ namespace Others
         {
             if (other.gameObject.CompareTag("Wall"))
             {
-                //particle.Play();
                 ShowParticleExplosion();
                 SoundManager.Instance.PlaySoundCylinder();
                 Destroy(other.gameObject);

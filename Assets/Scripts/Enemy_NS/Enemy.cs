@@ -13,6 +13,7 @@ namespace Enemy_NS
         public GameObject enemyMesh;
         public GameObject item4;
         public GameObject info6;
+        public GameObject info7;
         public Transform spawnPoint;
         public Canvas instantiateSphere;
         public Slider sldHealthEnemy;
@@ -48,6 +49,7 @@ namespace Enemy_NS
             particleTornado.Play();
             particleDeath.Play();
             info6.SetActive(true);
+            info7.SetActive(true);
             enemyMesh.SetActive(false);
             instantiateSphere.gameObject.SetActive(false);
             Destroy(info2);
