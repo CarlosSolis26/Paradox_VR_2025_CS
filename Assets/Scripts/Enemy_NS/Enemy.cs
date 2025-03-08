@@ -15,13 +15,11 @@ namespace Enemy_NS
         public GameObject info6;
         public GameObject info7;
         public Transform spawnPoint;
-        public Canvas instantiateSphere;
+        public GameObject instantiateSphere;
         public Slider sldHealthEnemy;
         public ParticleSystem particleDeath;
         public ParticleSystem particleBlood;
         public ParticleSystem particleTornado;
-
-        public GameObject info2;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -51,8 +49,8 @@ namespace Enemy_NS
             info6.SetActive(true);
             info7.SetActive(true);
             enemyMesh.SetActive(false);
-            instantiateSphere.gameObject.SetActive(false);
-            Destroy(info2);
+            //instantiateSphere.SetActive(false);
+            Destroy(instantiateSphere);
             StartCoroutine(IenEnemy());
         }
 
@@ -60,7 +58,6 @@ namespace Enemy_NS
         {
             yield return new WaitForSeconds(6);
             particleTornado.Stop();
-            //info6.SetActive(false);
             Destroy(gameObject);
         }
         
