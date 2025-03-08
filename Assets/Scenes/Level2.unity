@@ -3017,7 +3017,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 254223349}
 --- !u!33 &356483958
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -4333,7 +4333,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 682315871}
         m_TargetAssemblyTypeName: Others.Info, Assembly-CSharp
         m_MethodName: DestroyInfo
         m_Mode: 2
@@ -6415,8 +6415,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Para pasar al siguiente nivel necesitas encontrar un item que destruya
-    este muro.
+  m_Text: Para llegar a la meta necesitas encontrar un item que destruya este muro.
 --- !u!222 &743866031
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25249,6 +25248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665805876675926098, guid: 1e8688be7a5619142a68beb4d7ba63e8,
+        type: 3}
+      propertyPath: m_Text
+      value: Recoge este item para destruir el muro de la meta.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
