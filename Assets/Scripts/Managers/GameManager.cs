@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,7 +17,6 @@ namespace Managers
         public GameObject mainMenu;
         public GameObject pauseMenu;
         public GameObject locomotionSystem;
-        private bool sceneDeath;
 
         private void Awake()
         {
@@ -59,19 +57,9 @@ namespace Managers
                 currentHealth = 0f;
                 UIManager.Instance.UpdateSldHealth(0f);
                 UIManager.Instance.DeactivateHud();
-                //SceneManager.LoadScene("SceneDeath");
-                UIManager.Instance.ShowScreenFinal("HAS PERDIDO");
                 locomotionSystem.SetActive(false);
-                StartCoroutine(IenScreenDeath());
+                UIManager.Instance.ShowScreenFinal("HAS PERDIDO");
             }
-        }
-
-        private IEnumerator IenScreenDeath()
-        {
-            yield return new WaitForSeconds(6);
-            UIManager.Instance.HideScreenFinal();
-            sceneDeath = true;
-            pauseMenu.SetActive(true);
         }
         
         private void OnEnable()
@@ -109,7 +97,6 @@ namespace Managers
             SoundManager.Instance.StopmusicMenu();
             SceneManager.LoadScene("Level1");
             SoundManager.Instance.PlayMusicGame();
-            //UIManager.Instance.healthText.text = playerHealth.health.ToString();
             mainMenu.SetActive(false);
             UIManager.Instance.ActivateHud();
             //}
@@ -125,6 +112,15 @@ namespace Managers
             {
                 SceneManager.LoadScene("Game");
             }*/
+        }
+
+        public void RestartGame()
+        {
+            UIManager.Instance.HideScreenFinal();
+            SceneManager.LoadScene("Level1");
+            locomotionSystem.SetActive(true);
+            SoundManager.Instance.PlayMusicGame();
+            UIManager.Instance.ActivateHud();
         }
 
         public void Menu()
@@ -159,10 +155,6 @@ namespace Managers
 
         public void ResumeGame()
         {
-            if (sceneDeath)
-            {
-                SceneManager.LoadScene("Level1");
-            }
             pauseMenu.SetActive(false);
             SoundManager.Instance.StopmusicMenu();
             SoundManager.Instance.PlayMusicGame();
