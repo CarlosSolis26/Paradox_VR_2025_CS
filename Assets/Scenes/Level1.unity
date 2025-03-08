@@ -3006,7 +3006,6 @@ GameObject:
   - component: {fileID: 248948917}
   - component: {fileID: 248948921}
   - component: {fileID: 248948920}
-  - component: {fileID: 248948919}
   - component: {fileID: 248948918}
   m_Layer: 5
   m_Name: Poke Interactions Info (2)
@@ -3056,23 +3055,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &248948919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248948916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &248948920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28329,7 +28311,6 @@ GameObject:
   - component: {fileID: 4015128327458463981}
   - component: {fileID: 4015128327458463980}
   - component: {fileID: 4015128327458463979}
-  - component: {fileID: 4015128327458463978}
   - component: {fileID: 4015128327458463982}
   - component: {fileID: 3347311274391000816}
   m_Layer: 5
@@ -28339,23 +28320,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4015128327458463978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4015128327458463977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &4015128327458463979
 MonoBehaviour:
   m_ObjectHideFlags: 0
