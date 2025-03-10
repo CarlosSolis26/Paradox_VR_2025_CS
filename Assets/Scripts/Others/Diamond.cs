@@ -14,7 +14,6 @@ namespace Others
         public void DestroyItemObject()
         {
             GameManager.Instance.UpdateDiamonds(1);
-            //Destroy(gameObject);
             diamondMesh.SetActive(false);
             SoundManager.Instance.PlaySoundDiamond();
             particlePickupDiamond.Play();
@@ -22,12 +21,6 @@ namespace Others
             UIManager.Instance.ShowTxtItems("Has ganado un diamante");
             StartCoroutine(IenDiamond());
         }
-
-        //private void OnDestroy()
-        //{
-            //particle.gameObject.SetActive(true);
-            //particle.Play();
-        //}
 
         private IEnumerator IenDiamond()
         {

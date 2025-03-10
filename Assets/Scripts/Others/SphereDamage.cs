@@ -1,5 +1,4 @@
 using Enemy_NS;
-using Managers;
 using UnityEngine;
 
 namespace Others
@@ -17,7 +16,6 @@ namespace Others
                 {
                     enemyHealth.TakeDamage(damageAmount);
                 }
-                //SoundManager.Instance.PlaySoundDamageEnemy();
                 Destroy(gameObject);
             }
         }

@@ -14,7 +14,6 @@ namespace Others
             {
                 particleNextLevel.Play();
                 StartCoroutine(IenLevel2());
-                //GameManager.Instance.Level2();
             }
         }
 
@@ -22,7 +21,6 @@ namespace Others
         {
             yield return new WaitForSeconds(2f);
             SoundManager.Instance.PlaySoundWin();
-            //particleNextLevel.Stop();
             GameManager.Instance.Level2();
         }
     }

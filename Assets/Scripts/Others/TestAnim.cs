@@ -6,13 +6,13 @@ namespace Others
     {
         [SerializeField] private bool isAnimEnabled;
         [SerializeField] private Animator animator;
-        
-        void Start()
+
+        private void Start()
         {
             animator = GetComponent<Animator>();
         }
 
-        void Update()
+        private void Update()
         {
             PlayTextAnim();
         }

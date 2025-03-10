@@ -6,14 +6,10 @@ namespace Managers
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-        //[SerializeField] private string newLevel;
         public int diamonds;
         public float maxHealth = 100f;
         public float currentHealth;
         
-        //public TMP_Text endLevelText;
-        //public GameObject endLevelObject;
-        //public PlayerHealth playerHealth;
         public GameObject mainMenu;
         public GameObject pauseMenu;
         public GameObject locomotionSystem;
@@ -62,56 +58,13 @@ namespace Managers
             }
         }
         
-        private void OnEnable()
-        {
-            //SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-
-        private void OnDisable()
-        {
-            //SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-
-        /*private void OnSceneLoaded(Scene sc, LoadSceneMode lsm)
-        {
-            if (sc.name == "Intro")
-            {
-                //hud.SetActive(false);
-            }
-            else
-            {
-                if (sc.name == "Level1")
-                {
-                    //Asign value 100 to health text
-                    //UIManager.Instance.healthText.text = playerHealth.health.ToString();
-                    //mainMenu.SetActive(false);
-                    //hud.SetActive(true);
-                }
-            }
-        }*/
-
         public void StartGame()
         {
-            //if (SceneManager.GetActiveScene().name == "Intro")
-            //{
-            SoundManager.Instance.StopmusicMenu();
+            SoundManager.Instance.StopMusicMenu();
             SceneManager.LoadScene("Level1");
             SoundManager.Instance.PlayMusicGame();
             mainMenu.SetActive(false);
             UIManager.Instance.ActivateHud();
-            //}
-            //else if (SceneManager.GetActiveScene().name == "Level1")
-            //{
-                //SceneManager.LoadScene("Level2");
-            //}
-            /*else if (SceneManager.GetActiveScene().name == "Level2")
-            {
-                SceneManager.LoadScene("Intro");
-            }
-            else
-            {
-                SceneManager.LoadScene("Game");
-            }*/
         }
 
         public void RestartGame()
@@ -138,7 +91,7 @@ namespace Managers
 
         public void QuitGame()
         {
-            SoundManager.Instance.StopmusicMenu();
+            SoundManager.Instance.StopMusicMenu();
             Application.Quit();
         }
 
@@ -149,55 +102,15 @@ namespace Managers
             SoundManager.Instance.PlayMusicMenu();
             UIManager.Instance.DeactivateHud();
             locomotionSystem.SetActive(false);
-            //Time.timeScale = 0;
-            //EventManager.TriggerEvent("OnGamePause");
         }
 
         public void ResumeGame()
         {
             pauseMenu.SetActive(false);
-            SoundManager.Instance.StopmusicMenu();
+            SoundManager.Instance.StopMusicMenu();
             SoundManager.Instance.PlayMusicGame();
             UIManager.Instance.ActivateHud();
             locomotionSystem.SetActive(true);
-            //Time.timeScale = 1;
-            //EventManager.TriggerEvent("OnGameResume");
         }
-
-        /*public void Interact(Collider other)
-        {
-            IDestroy destroy = other.GetComponent<IDestroy>();
-            if (destroy != null)
-            {
-                destroy.DestroyItemObject();
-            }
-        }*/
-
-        /*public void EndLevel(bool success)
-        {
-            if (success)
-            {
-                UIManager.Instance.ShowMessage("¡Felicidades! Nivel completado.");
-            }
-            else
-            {
-                UIManager.Instance.ShowMessage("Reinicia el nivel.");
-            }
-        }*/
-
-        /*public void ShowEndScreen(string message)
-        {
-            endLevelObject.SetActive(true);
-            endLevelText.text = message;
-        }*/
-
-        /*private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                //Destroy(other.gameObject);
-                ShowEndScreen("HAS GANADO");
-            }
-        }*/
     }
 }

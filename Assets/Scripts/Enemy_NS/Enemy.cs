@@ -49,7 +49,6 @@ namespace Enemy_NS
             info6.SetActive(true);
             info7.SetActive(true);
             enemyMesh.SetActive(false);
-            //instantiateSphere.SetActive(false);
             Destroy(instantiateSphere);
             StartCoroutine(IenEnemy());
         }
@@ -69,11 +68,6 @@ namespace Enemy_NS
         private void UpdateSldHealthEnemy(float value)
         {
             sldHealthEnemy.value = value;
-        }
-
-        public void HideMesh()
-        {
-            enemyMesh.SetActive(false);
         }
     }
 }
