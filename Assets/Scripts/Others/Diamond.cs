@@ -9,6 +9,7 @@ namespace Others
         public GameObject diamondMesh;
         public ParticleSystem particle;
         public ParticleSystem particlePickupDiamond;
+        public GameObject item1;
         
         public void DestroyItemObject()
         {
@@ -33,6 +34,7 @@ namespace Others
             yield return new WaitForSeconds(5f);
             particle.Stop();
             UIManager.Instance.HideTxtItems();
+            item1.SetActive(true);
             Destroy(gameObject);
         }
     }
