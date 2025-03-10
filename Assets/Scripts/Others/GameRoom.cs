@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Others
@@ -8,6 +6,7 @@ namespace Others
     {
         public GameObject infoGameRoom;
         public GameObject infoContinue;
+        public GameObject item2;
         private bool enter;
         
         
@@ -16,6 +15,7 @@ namespace Others
             if (enter) return;
             infoGameRoom.SetActive(false);
             infoContinue.SetActive(true);
+            item2.SetActive(true);
             enter = true;
         }
     }
