@@ -14,7 +14,7 @@ public class BulletSpawner: MonoBehaviour
         var bulletRigidbody = bullet.GetComponent<Rigidbody>();
 
         // Apply velocity to the bullet to move it forward
-        bulletRigidbody.linearVelocity = spawnPoint.forward * bulletSpeed;
+        bulletRigidbody.velocity = spawnPoint.forward * bulletSpeed;
     }
 }
 }

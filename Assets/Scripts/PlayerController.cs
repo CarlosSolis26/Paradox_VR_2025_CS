@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // Aplicar movimiento al Rigidbody2D
-        rb.linearVelocity = moveInput * speed;
+        rb.velocity = moveInput * speed;
     }
 
     void Start()
