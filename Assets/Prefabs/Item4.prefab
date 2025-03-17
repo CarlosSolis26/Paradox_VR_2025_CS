@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleExplosion: {fileID: 1176554369332223057}
   item4Mesh: {fileID: 3359297207168563414}
+  wall: Wall
 --- !u!1 &3359297207168563414
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,11 +8,17 @@ namespace Others
     {
         public ParticleSystem particleExplosion;
         public GameObject item4Mesh;
+        public string wall;
         
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Wall"))
+            if (other.gameObject.CompareTag(wall))
             {
+                GameObject[] objectsToDestroy = GameObject.FindGameObjectsWithTag(wall);
+                foreach (GameObject obj in objectsToDestroy)
+                {
+                    Destroy(obj);
+                }
                 ShowParticleExplosion();
                 SoundManager.Instance.PlaySoundCylinder();
                 Destroy(other.gameObject);
