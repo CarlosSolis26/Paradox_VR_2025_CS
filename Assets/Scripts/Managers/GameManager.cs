@@ -52,7 +52,6 @@ namespace Managers
             {
                 currentHealth = 0f;
                 UIManager.Instance.UpdateSldHealth(0f);
-                UIManager.Instance.DeactivateHud();
                 locomotionSystem.SetActive(false);
                 UIManager.Instance.ShowScreenFinal("HAS PERDIDO");
             }
@@ -64,7 +63,6 @@ namespace Managers
             SceneManager.LoadScene("Level1");
             SoundManager.Instance.PlayMusicGame();
             mainMenu.SetActive(false);
-            UIManager.Instance.ActivateHud();
         }
 
         public void RestartGame()
@@ -73,7 +71,6 @@ namespace Managers
             SceneManager.LoadScene("Level1");
             locomotionSystem.SetActive(true);
             SoundManager.Instance.PlayMusicGame();
-            UIManager.Instance.ActivateHud();
         }
 
         public void Menu()
@@ -100,7 +97,6 @@ namespace Managers
             pauseMenu.SetActive(true);
             SoundManager.Instance.StopMusicGame();
             SoundManager.Instance.PlayMusicMenu();
-            UIManager.Instance.DeactivateHud();
             locomotionSystem.SetActive(false);
         }
 
@@ -109,7 +105,6 @@ namespace Managers
             pauseMenu.SetActive(false);
             SoundManager.Instance.StopMusicMenu();
             SoundManager.Instance.PlayMusicGame();
-            UIManager.Instance.ActivateHud();
             locomotionSystem.SetActive(true);
         }
     }

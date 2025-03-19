@@ -15,7 +15,6 @@ namespace Others
                 particle.Play();
                 particleAuraFin.Play();
                 SoundManager.Instance.PlaySoundWin();
-                UIManager.Instance.DeactivateHud();
                 GameManager.Instance.locomotionSystem.SetActive(false);
                 UIManager.Instance.ShowScreenFinal("HAS GANADO");
             }

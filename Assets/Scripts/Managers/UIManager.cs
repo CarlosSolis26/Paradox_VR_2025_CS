@@ -13,7 +13,6 @@ namespace Managers
         public Slider sldHealth;
         public GameObject panelItems;
         public TMP_Text txtItems;
-        public GameObject hud;
         [FormerlySerializedAs("screenDeath")] public GameObject screenFinal;
         [FormerlySerializedAs("txtDeath")] public TMP_Text txtFinal;
         
@@ -55,16 +54,6 @@ namespace Managers
         public void HideTxtItems()
         {
             panelItems.gameObject.SetActive(false);
-        }
-
-        public void ActivateHud()
-        {
-            hud.SetActive(true);
-        }
-
-        public void DeactivateHud()
-        {
-            hud.SetActive(false);
         }
 
         public void ShowScreenFinal(string message)
