@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 3194191}
   - component: {fileID: 3194190}
   m_Layer: 0
-  m_Name: PolyShape (14)
+  m_Name: Wall9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 18374644}
   - component: {fileID: 18374643}
   m_Layer: 0
-  m_Name: PolyShape
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2745,7 +2745,7 @@ GameObject:
   - component: {fileID: 356483958}
   - component: {fileID: 356483957}
   m_Layer: 0
-  m_Name: PolyShape (12)
+  m_Name: InteractableWallRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4043,7 +4043,7 @@ GameObject:
   - component: {fileID: 460202749}
   - component: {fileID: 460202748}
   m_Layer: 0
-  m_Name: PolyShape (13)
+  m_Name: Wall8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4812,7 +4812,7 @@ GameObject:
   - component: {fileID: 505133298}
   - component: {fileID: 505133297}
   m_Layer: 0
-  m_Name: PolyShape (1)
+  m_Name: Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7044,7 +7044,7 @@ GameObject:
   - component: {fileID: 801136134}
   - component: {fileID: 801136133}
   m_Layer: 0
-  m_Name: PolyShape (5)
+  m_Name: Wall6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14488,7 +14488,7 @@ GameObject:
   - component: {fileID: 939550540}
   - component: {fileID: 939550539}
   m_Layer: 0
-  m_Name: PolyShape (16)
+  m_Name: Wall10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15080,7 +15080,7 @@ GameObject:
   - component: {fileID: 956132009}
   - component: {fileID: 956132008}
   m_Layer: 0
-  m_Name: PolyShape (10)
+  m_Name: Wall5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15935,7 +15935,7 @@ GameObject:
   - component: {fileID: 1004880480}
   - component: {fileID: 1004880486}
   m_Layer: 0
-  m_Name: PolyShape (19)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16950,7 +16950,7 @@ GameObject:
   - component: {fileID: 1089362013}
   - component: {fileID: 1089362012}
   m_Layer: 0
-  m_Name: PolyShape (8)
+  m_Name: Wall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17299,7 +17299,7 @@ GameObject:
   - component: {fileID: 1112216064}
   - component: {fileID: 1112216063}
   m_Layer: 0
-  m_Name: PolyShape (4)
+  m_Name: Wall17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17648,7 +17648,7 @@ GameObject:
   - component: {fileID: 1115590338}
   - component: {fileID: 1115590337}
   m_Layer: 0
-  m_Name: PolyShape (15)
+  m_Name: Wall15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18081,7 +18081,7 @@ GameObject:
   - component: {fileID: 1123286484}
   - component: {fileID: 1123286483}
   m_Layer: 0
-  m_Name: PolyShape (2)
+  m_Name: Wall13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18430,7 +18430,7 @@ GameObject:
   - component: {fileID: 1163565210}
   - component: {fileID: 1163565209}
   m_Layer: 0
-  m_Name: PolyShape (3)
+  m_Name: Wall16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20865,7 +20865,7 @@ GameObject:
   - component: {fileID: 1476028534}
   - component: {fileID: 1476028533}
   m_Layer: 0
-  m_Name: PolyShape (17)
+  m_Name: Wall11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21335,7 +21335,7 @@ GameObject:
   - component: {fileID: 1508357668}
   - component: {fileID: 1508357667}
   m_Layer: 0
-  m_Name: PolyShape (7)
+  m_Name: Wall14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21944,7 +21944,7 @@ GameObject:
   - component: {fileID: 1544973031}
   - component: {fileID: 1544973030}
   m_Layer: 0
-  m_Name: PolyShape (6)
+  m_Name: Wall7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22775,7 +22775,7 @@ GameObject:
   - component: {fileID: 1618058635}
   - component: {fileID: 1618058634}
   m_Layer: 0
-  m_Name: PolyShape (9)
+  m_Name: Wall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23986,7 +23986,7 @@ GameObject:
   - component: {fileID: 1780986724}
   - component: {fileID: 1780986723}
   m_Layer: 0
-  m_Name: PolyShape (11)
+  m_Name: InteractableWallPurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25689,7 +25689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1921045786}
   m_Layer: 0
-  m_Name: Probando
+  m_Name: MoveWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26096,7 +26096,7 @@ GameObject:
   - component: {fileID: 1959762595}
   - component: {fileID: 1959762594}
   m_Layer: 0
-  m_Name: PolyShape (18)
+  m_Name: Wall12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
