@@ -6,20 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d8dbb7b2-9c81-4a74-99c7-1c26cda09ac4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Paradox_VR_MP_07-2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Paradox_VR_MP_07-2024/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/01.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/01.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/02.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/02.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/03.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/03.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/04.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/04.tga.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/Final.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Others/Final.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/TestAnim.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/TestAnim.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/TestCube.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/TestCube.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/TestCube1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/TestCube1.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Testing/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Testing/Scripts/SceneLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Testing/Scripts/SceneLoader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/IDestroy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Others/IDestroy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +185,10 @@
       <workItem from="1742240602263" duration="2066000" />
       <workItem from="1742254007475" duration="563000" />
       <workItem from="1742349164080" duration="4603000" />
+      <workItem from="1742429829739" duration="4677000" />
+      <workItem from="1742511420338" duration="6402000" />
+      <workItem from="1742614878776" duration="897000" />
+      <workItem from="1742655470987" duration="2034000" />
     </task>
     <servers />
   </component>
