@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d8dbb7b2-9c81-4a74-99c7-1c26cda09ac4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Paradox_VR_MP_07-2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Paradox_VR_MP_07-2024/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/01.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/01.tga.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/02.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/02.tga.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/03.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/03.tga.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/04.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HandPainted Lava Textures/Textures/04.tga.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/IDestroy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Others/IDestroy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +30,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Others/GameRoom.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Others/Hud.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Others/OpenLevel2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Others/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Others/SphereDamage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Others/TestCube.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Others/TestCube1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player_NS/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal/Runtime/Data/UniversalRenderPipelineAsset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/UGUI/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -189,6 +184,8 @@
       <workItem from="1742511420338" duration="6402000" />
       <workItem from="1742614878776" duration="897000" />
       <workItem from="1742655470987" duration="2034000" />
+      <workItem from="1742666692596" duration="937000" />
+      <workItem from="1742667924421" duration="2353000" />
     </task>
     <servers />
   </component>

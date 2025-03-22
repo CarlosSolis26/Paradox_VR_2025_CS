@@ -94,6 +94,7 @@ namespace Managers
 
         public void PauseGame()
         {
+            if (pauseMenu.activeSelf) return;
             pauseMenu.SetActive(true);
             SoundManager.Instance.StopMusicGame();
             SoundManager.Instance.PlayMusicMenu();
