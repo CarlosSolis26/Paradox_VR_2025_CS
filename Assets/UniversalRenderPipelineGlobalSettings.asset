@@ -56,7 +56,17 @@ MonoBehaviour:
       - rid: 9100469049234554900
       - rid: 8567665506175942656
     m_RuntimeSettings:
-      m_List: []
+      m_List:
+      - rid: 9100469049234554881
+      - rid: 9100469049234554883
+      - rid: 9100469049234554885
+      - rid: 9100469049234554886
+      - rid: 9100469049234554888
+      - rid: 9100469049234554889
+      - rid: 9100469049234554890
+      - rid: 9100469049234554892
+      - rid: 9100469049234554896
+      - rid: 9100469049234554899
   m_AssetVersion: 8
   m_ObsoleteDefaultVolumeProfile: {fileID: 0}
   m_RenderingLayerNames:
@@ -87,8 +97,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 8567665506175942656
       type: {class: UniversalRenderPipelineEditorAssets, ns: UnityEngine.Rendering.Universal,
         asm: Unity.RenderPipelines.Universal.Runtime}

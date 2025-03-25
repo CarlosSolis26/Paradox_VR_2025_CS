@@ -14,12 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 2f857f0576bedd24191c183ac2efc510
-  - enabled: 1
-    path: Assets/Testing/Scenes/Intro_copy.unity
-    guid: 6c765eaf790c1234a9aecf91596ddc81
-  - enabled: 1
-    path: Assets/Testing/Scenes/Level1_copy.unity
-    guid: cc26146ba5455d04f8c35dd1e17e56aa
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5ce83d039db4bda499ddd377251cd3da,
       type: 2}
